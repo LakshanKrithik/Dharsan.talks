@@ -1,0 +1,199 @@
+/* ── Design Tokens ─────────────────────────────────────── */
+:root {
+  --bg-primary:    #080808;
+  --bg-secondary:  #0f0f0f;
+  --bg-card:       #111111;
+  --bg-card-hover: #161616;
+  --accent:        #3D6ED6;
+  --accent-light:  #6391F5;
+  --accent-dark:   #224EA3;
+  --accent-glow:   rgba(61, 110, 214, 0.15);
+  --accent-border: rgba(61, 110, 214, 0.35);
+  --text-primary:  #F0EDE6;
+  --text-secondary:#A09880;
+  --text-muted:    #5a5040;
+  --white:         #ffffff;
+  --radius-sm:     8px;
+  --radius-md:     14px;
+  --radius-lg:     24px;
+  --radius-xl:     36px;
+  --transition:    0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-w:         1200px;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Typography Helpers ─────────────────────────────────── */
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.font-sekuya {
+  font-family: 'Sekuya', system-ui, sans-serif;
+}
+
+.font-ibm {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+/* IBM Plex Sans Condensed Weights */
+.ibm-thin { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 100; }
+.ibm-extralight { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 200; }
+.ibm-light { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 300; }
+.ibm-regular { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 400; }
+.ibm-medium { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 500; }
+.ibm-semibold { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 600; }
+.ibm-bold { font-family: 'IBM Plex Sans Condensed', sans-serif; font-weight: 700; }
+
+/* ── Shared Section Styles ──────────────────────────────── */
+.section {
+  padding: 100px 24px;
+  position: relative;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-border);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.section-subtext {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.75;
+}
+
+/* ── Gold Button ────────────────────────────────────────── */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #0a0800;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-accent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.btn-accent:hover::before { opacity: 1; }
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.45);
+}
+
+.btn-accent span { position: relative; z-index: 1; }
+
+/* ── Gold Divider ───────────────────────────────────────── */
+.accent-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 20px 0;
+}
+
+/* ── Scroll reveal base ─────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ── Noise texture overlay ──────────────────────────────── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section { padding: 70px 20px; }
+}
