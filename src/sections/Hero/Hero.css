@@ -60,13 +60,20 @@
 
 .hero-title {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(4rem, 8vw, 7.5rem);
+  font-size: clamp(3rem, 5vw, 5.5rem);
   font-weight: 900;
   letter-spacing: -0.02em;
-  line-height: 1.0;
-  color: #EBFF00; /* Neon yellow from reference */
+  line-height: 1.1;
+  color: #ffffff; /* Glossy white */
+  text-shadow: 0 4px 30px rgba(255, 255, 255, 0.3), 0 2px 10px rgba(255, 255, 255, 0.6);
   margin-bottom: 24px;
   text-transform: uppercase;
+}
+
+.text-blue {
+  -webkit-text-fill-color: #6391F5;
+  color: #6391F5;
+  text-shadow: 0 4px 30px rgba(99, 145, 245, 0.3), 0 2px 10px rgba(99, 145, 245, 0.6);
 }
 
 .hero-title .accent-word {

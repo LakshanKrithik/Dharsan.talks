@@ -5,7 +5,9 @@
 
 .slider-wrapper {
   position: relative;
-  width: 100%;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,10 +17,7 @@
 
 .slider-container {
   width: 100%;
-  position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .infinite-scroll {

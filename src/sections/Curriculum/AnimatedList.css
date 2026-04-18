@@ -89,7 +89,7 @@
 .item-text {
   color: #fff;
   margin: 0;
-  font-size: 1.35rem; /* Fits comfortably inside ½ constraints */
+  font-size: 1.5rem;
   font-weight: 700;
   flex: 1;
   line-height: 1.25;
@@ -97,7 +97,7 @@
 }
 
 .expand-icon {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: rgba(255, 255, 255, 0.3);
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
   font-weight: 300;
@@ -132,12 +132,12 @@
 }
 
 .item-modules-img-style li {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
 }
 

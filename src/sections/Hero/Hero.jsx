@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SparklesCore } from '../../components/ui/sparkles';
-import BlurText from '../../components/BlurText/BlurText';
+import ShinyText from '../../components/ui/ShinyText';
 import ImageAutoSlider from '../../components/ui/ImageAutoSlider';
 import './Hero.css';
 
@@ -42,23 +42,26 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="hero-eyebrow" variants={fadeUp(0)}>
-          6-Week Live Cohort · Starts Soon
-        </motion.div>
-
         <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
           {/* Gradients like the demo to look premium */}
           <div style={{ position: 'absolute', top: '-10px', left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--accent), transparent)', filter: 'blur(4px)', opacity: 0.6 }} />
           <div style={{ position: 'absolute', top: '-10px', left: '20%', right: '20%', height: '1px', background: 'linear-gradient(90deg, transparent, var(--accent-light), transparent)' }} />
           
-          <BlurText
-            text="Speak with Authority and Charisma to Inspire and Stand Out"
-            delay={140}
-            animateBy="words"
-            direction="top"
-            className="hero-title font-bebas"
-            style={{ textAlign: 'center' }}
-          />
+          <div style={{ textAlign: 'center', width: '100%' }}>
+            <ShinyText
+              text={<>Speak with <span className="text-blue">Authority</span> and <span className="text-blue">Charisma</span> to Inspire and Stand Out</>}
+              speed={2}
+              delay={0}
+              color="rgba(255, 255, 255, 0.65)"
+              shineColor="#ffffff"
+              spread={120}
+              direction="left"
+              yoyo
+              pauseOnHover={false}
+              disabled={false}
+              className="hero-title"
+            />
+          </div>
         </div>
 
         <motion.div variants={fadeUp(0.2)}>

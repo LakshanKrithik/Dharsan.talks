@@ -58,21 +58,21 @@
 
 .step-label {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 6px;
 }
 
 .step-desc {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .value-tagline {
   margin-top: 20px;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   font-style: italic;
   letter-spacing: 0.06em;

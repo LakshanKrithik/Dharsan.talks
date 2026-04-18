@@ -4,15 +4,18 @@ import './TrueFocus.css';
 
 const TrueFocus = ({
   sentence = 'True Focus',
-  separator = ' ',
+  separator = '.',
   manualMode = false,
   blurAmount = 5,
-  borderColor = 'green',
-  glowColor = 'rgba(0, 255, 0, 0.6)',
+  borderColor = 'white',
+  glowColor = 'rgba(255, 255, 255, 0.6)',
   animationDuration = 0.5,
   pauseBetweenAnimations = 1
 }) => {
   const words = sentence.split(separator);
+  // Reattach the separator for rendering except for the last word
+  const wordsWithSeparators = words.map((word, i) => i === words.length - 1 ? word : word + separator);
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lastActiveIndex, setLastActiveIndex] = useState(null);
   const containerRef = useRef(null);
@@ -63,7 +66,7 @@ const TrueFocus = ({
 
   return (
     <div className="focus-container" ref={containerRef}>
-      {words.map((word, index) => {
+      {wordsWithSeparators.map((word, index) => {
         const isActive = index === currentIndex;
         return (
           <span

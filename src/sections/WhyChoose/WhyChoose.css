@@ -1,103 +1,250 @@
+/* ─── Section shell — override global .section padding ── */
 .why {
-  background: var(--bg-secondary);
-}
-
-.why-header {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 72px;
-}
-
-.why-header .section-subtext {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.why-steps {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 860px;
-  margin: 0 auto;
-}
-
-.why-step {
-  background: var(--bg-card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: var(--radius-md);
-  padding: 36px 30px;
   position: relative;
   overflow: hidden;
-  transition: border-color var(--transition), transform var(--transition);
+  background: var(--bg-secondary);
+  padding: 0 !important;
 }
 
-.why-step::after {
-  content: '';
+/* ─── MagicRings background ─────────────────────────── */
+.why-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top left, var(--accent-glow), transparent 70%);
-  opacity: 0;
-  transition: opacity var(--transition);
+  z-index: 0;
+  opacity: 0.45;
+  pointer-events: none;
 }
 
-.why-step:hover {
-  border-color: var(--accent-border);
-  transform: translateY(-3px);
+/* ─── Container sits above bg ───────────────────────── */
+.why-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 80px 32px 0;
 }
 
-.why-step:hover::after {
-  opacity: 1;
+/* ─── Header ─────────────────────────────────────────── */
+.why-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 56px;
+  flex-shrink: 0;
 }
 
-.why-step-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--accent-border);
+/* ─── Section tag via GradientText ──────────────────── */
+.why-tag-gradient {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  border: 1px solid rgba(99, 145, 245, 0.3) !important;
+  background: rgba(99, 145, 245, 0.06) !important;
+  border-radius: 100px !important;
+  padding: 7px 22px !important;
+  margin-bottom: 24px !important;
+  font-family: "IBM Plex Sans Condensed", sans-serif !important;
+}
+
+/* ─── Heading lines via GradientText ─────────────────── */
+.why-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: clamp(2.4rem, 5vw, 3.8rem) !important;
+  line-height: 1.15 !important;
+  margin: 0 !important;
+}
+
+.why-heading-gradient {
+  font-family: "IBM Plex Sans Condensed", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.why-heading-em {
+  font-style: italic !important;
+}
+
+/* ─── Three-column grid ──────────────────────────────── */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px 1fr;
+  align-items: stretch;
+  gap: 40px;
+  flex: 1;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ─── Card columns ───────────────────────────────────── */
+.why-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding: 0 0 80px;
+}
+
+.why-col--left {
+  align-items: stretch;
+}
+
+.why-col--right {
+  align-items: stretch;
+}
+
+.why-card-motion {
+  width: 100%;
+  /* No max-width — cards stretch to fill the full column */
+}
+
+/* ─── Glass card ─────────────────────────────────────── */
+.why-glass-card {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 180px;
+  border-radius: 20px !important;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(99, 145, 245, 0.12);
+}
+
+.why-card-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px 36px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Numbered label */
+.why-card-number {
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  color: transparent;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
   line-height: 1;
-  margin-bottom: 16px;
-  transition: color var(--transition);
+  margin-bottom: 0;
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 
-.why-step:hover .why-step-num {
-  color: var(--accent);
+.why-card-title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 10px;
+  letter-spacing: 0.01em;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
-.why-step-icon {
-  font-size: 1.8rem;
-  margin-bottom: 14px;
+.why-card-desc {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+}
+
+/* Text block fills remaining horizontal space */
+.why-card-inner > div:last-child {
+  flex: 1;
+  padding-left: 20px;
+  border-left: 1px solid rgba(99, 145, 245, 0.25);
+}
+
+/* ─── Center portrait — fills full column height ─────── */
+.why-center-image {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* Width derived from grid column definition */
+}
+
+.why-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: drop-shadow(0 0 100px rgba(99, 145, 245, 0.45));
   display: block;
 }
 
-.why-step-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
-  line-height: 1.3;
-  position: relative;
-  z-index: 1;
-}
-
-.why-step-desc {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 640px) {
-  .why {
-    text-align: center;
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .why-grid {
+    grid-template-columns: 1fr 360px 1fr;
+    gap: 24px;
   }
-  
-  .why-steps {
+
+  .why-card-motion {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .why-grid {
+    grid-template-columns: 1fr 300px 1fr;
+  }
+
+  .why-card-motion {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-container {
+    min-height: unset;
+    padding: 64px 20px 0;
+  }
+
+  .why-grid {
     grid-template-columns: 1fr;
+    flex: unset;
+    gap: 32px;
   }
 
-  .why-step {
-    padding: 32px 24px;
+  .why-center-image {
+    width: 75%;
+    max-width: 340px;
+    margin: 0 auto;
+    order: -1;
+    height: 500px;
+  }
+
+  .why-portrait {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .why-col {
+    padding: 0 8px 48px;
+    align-items: center !important;
+  }
+
+  .why-card-motion {
+    max-width: 100%;
+  }
+
+  .why-heading {
+    font-size: clamp(2rem, 7vw, 2.8rem) !important;
   }
 }

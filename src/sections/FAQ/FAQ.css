@@ -32,12 +32,12 @@
   text-align: left;
   background: none;
   border: none;
-  padding: 24px 28px;
+  padding: 26px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--text-primary);
   cursor: pointer;
@@ -45,7 +45,7 @@
 
 .faq-icon {
   color: var(--accent);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   transition: transform var(--transition);
 }
 
@@ -58,18 +58,19 @@
 }
 
 .faq-answer {
-  padding: 0 28px 24px;
-  font-size: 0.95rem;
+  padding: 0 32px 28px;
+  font-size: 1.1rem;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 @media (max-width: 600px) {
   .faq-question {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     padding: 20px;
   }
   .faq-answer {
     padding: 0 20px 20px;
+    font-size: 1rem;
   }
 }

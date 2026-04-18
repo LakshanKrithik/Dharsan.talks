@@ -27,11 +27,11 @@
 }
 
 .ruixen-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: rgba(255,255,255,0.7);
   margin-top: 1rem;
-  max-width: 600px;
-  line-height: 1.5;
+  max-width: 640px;
+  line-height: 1.6;
 }
 
 /* Toggle */
@@ -128,7 +128,7 @@
 }
 
 .ruixen-card-title {
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   font-weight: 600;
   color: #fff;
   margin: 0;
@@ -144,10 +144,10 @@
 }
 
 .ruixen-card-desc {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: rgba(255,255,255,0.6);
   margin-top: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .ruixen-card-middle {
@@ -161,10 +161,10 @@
 
 .ruixen-submit-btn {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   border-radius: 12px;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   text-align: center;
   background-color: #fff;
   color: #000;
@@ -202,14 +202,14 @@
   align-items: flex-start;
   gap: 12px;
   color: rgba(255,255,255,0.85);
-  font-size: 0.95rem;
-  line-height: 1.4;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
 .ruixen-bill-status {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: rgba(255,255,255,0.5);
   margin-top: 12px;
-  height: 20px; 
+  height: 20px;
 }

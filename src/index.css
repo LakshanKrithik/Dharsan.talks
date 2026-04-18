@@ -30,7 +30,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 body {
@@ -103,31 +103,31 @@ a {
 
 .section-tag {
   display: inline-block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
   background: var(--accent-glow);
   border: 1px solid var(--accent-border);
-  padding: 6px 16px;
+  padding: 7px 20px;
   border-radius: 100px;
   margin-bottom: 20px;
 }
 
 .section-heading {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .section-subtext {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
-  max-width: 560px;
-  line-height: 1.75;
+  max-width: 580px;
+  line-height: 1.8;
 }
 
 /* ── Gold Button ────────────────────────────────────────── */
