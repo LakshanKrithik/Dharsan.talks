@@ -1,5 +1,8 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import AnimatedList from './AnimatedList';
+import { AnimatedText } from '../../components/ui/AnimatedText';
+import { SparklesCore } from '../../components/ui/SparklesCore';
 import './Curriculum.css';
 
 const SKOOL_URL = '#pricing';
@@ -61,62 +64,62 @@ const sessions = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 },
-  }),
-};
-
 export default function Curriculum() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="section curriculum" id="curriculum">
-      <div className="container">
+    <section className="section curriculum" id="curriculum" style={{ position: 'relative' }}>
+      {/* Sparkles Background spanning the ENTIRE third page section */}
+      <div style={{ 
+        position: 'absolute', 
+        inset: 0, 
+        zIndex: 0,
+        pointerEvents: 'none'
+      }}>
+        <SparklesCore
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.5}
+          particleDensity={60} // Lowered slightly since it covers the entire section now
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+          speed={0.8}
+        />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div
           className="curriculum-header"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 0 20px' }}
         >
           <span className="section-tag">The Curriculum</span>
-          <h2 className="section-heading" style={{ marginBottom: '16px' }}>
-            The Complete System to Make You an{' '}
-            <em style={{ color: 'var(--accent)', fontStyle: 'italic' }}>Incredible Speaker</em>
-          </h2>
-          <div className="accent-divider" style={{ margin: '20px auto' }} />
-          <p className="section-subtext">
-            Master this system and walk into any conversation knowing exactly what to say and how to say it.
-          </p>
+          
+          <AnimatedText 
+            text="The end-to-end curriculum that lets you handle any conversation confidently" 
+            textClassName="section-heading"
+            style={{ fontSize: '3.2rem', lineHeight: 1.15, maxWidth: '1000px', margin: '16px auto 0' }}
+            gradientColors="linear-gradient(90deg, rgba(255,255,255,0.4), #ffffff, rgba(255,255,255,0.4))"
+            gradientAnimationDuration={4}
+          />
         </motion.div>
 
-        <div className="curriculum-grid" ref={ref}>
-          {sessions.map((s, i) => (
-            <motion.div
-              key={s.num}
-              className="session-card"
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-            >
-              <div className="session-number">{s.num}</div>
-              <h3 className="session-title">{s.title}</h3>
-              <ul className="session-modules">
-                {s.modules.map((m) => (
-                  <li key={m}>{m}</li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+        <div className="curriculum-interactive" ref={ref} style={{ marginTop: '30px', display: 'flex', justifyContent: 'center' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+          >
+            <AnimatedList items={sessions} displayScrollbar={false} />
+          </motion.div>
         </div>
 
-        <div className="curriculum-cta">
+        <div className="curriculum-cta" style={{ marginTop: '30px', display: 'flex', justifyContent: 'center' }}>
           <a href={SKOOL_URL}>
             <button className="btn-accent">
               <span>Join the Cohort →</span>

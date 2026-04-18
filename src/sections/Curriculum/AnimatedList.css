@@ -1,0 +1,193 @@
+.scroll-list-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Increased to allow comfortable 2-column side-by-side */
+  margin: 0 auto;
+}
+
+.scroll-list {
+  max-height: 700px;
+  overflow-y: auto;
+  padding: 16px 24px;
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Splits sessions perfectly into a 2-column layout */
+  gap: 32px; /* Smooth spacing between all cards on both axes */
+  align-items: start; /* Anchors items to the top so expanding one doesn't drag out the other */
+}
+
+.scroll-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.item {
+  padding: 32px 32px;
+  background-color: #08080A;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.item.selected {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: #0F0F14;
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.item-num {
+  font-size: 3.5rem; /* Downsized slightly for 2-column space optimization */
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.12);
+  margin-right: 24px;
+  line-height: 1;
+  font-family: 'Inter', -apple-system, sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.item-text {
+  color: #fff;
+  margin: 0;
+  font-size: 1.35rem; /* Fits comfortably inside ½ constraints */
+  font-weight: 700;
+  flex: 1;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.expand-icon {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.3);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:hover .expand-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.expand-icon.open {
+  transform: rotate(45deg);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.item-details {
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+  padding-left: calc(3.5rem + 24px); /* Perfectly aligns nested content beneath the header text */
+}
+
+.item-modules-img-style {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-modules-img-style li {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.item-modules-img-style li span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: -2px;
+}
+
+.top-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--bg-primary, #000), transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--bg-primary, #000), transparent);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+@media (max-width: 960px) {
+  .scroll-list-container {
+    max-width: 860px;
+  }
+  .scroll-list {
+    grid-template-columns: 1fr; /* Snaps back to vertical list on tablets/mobiles */
+  }
+  .item {
+    padding: 24px;
+  }
+  .item-num {
+    font-size: 3.5rem;
+    margin-right: 24px;
+  }
+  .item-details {
+    padding-left: 0; /* Resets alignment nicely below the entire block for mobile */
+    margin-top: 20px;
+  }
+}

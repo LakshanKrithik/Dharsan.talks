@@ -1,0 +1,215 @@
+.ruixen-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.ruixen-header-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.ruixen-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ruixen-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 1rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Toggle */
+.ruixen-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.ruixen-toggle-btn {
+  position: relative;
+  width: 3.5rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: var(--accent, #3b82f6);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.ruixen-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 1.35rem;
+  height: 1.35rem;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+.ruixen-toggle-thumb.annually {
+  transform: translateX(1.75rem);
+}
+
+/* Grid layout */
+.ruixen-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+}
+@media (min-width: 900px) {
+  .ruixen-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* Card */
+.ruixen-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem; /* 24px matches ElectricBorder */
+  background-color: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.ruixen-card.mastermind {
+  border-color: rgba(244, 11, 53, 0.4); 
+}
+
+/* internal Mastermind glow */
+.mastermind-glow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #f40b35; /* requested color */
+  filter: blur(8rem);
+  transform: rotate(-45deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ruixen-card-top {
+  position: relative;
+  z-index: 1;
+  padding: 32px 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ruixen-card-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.ruixen-card-price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 1rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.ruixen-card-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.ruixen-card-middle {
+  position: relative;
+  z-index: 1;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ruixen-submit-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, background-color 0.2s, transform 0.2s;
+}
+.ruixen-submit-btn.mastermind-btn {
+  background-color: #f40b35; /* mapped accurately */
+  color: #fff;
+}
+.ruixen-submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.ruixen-card-bottom {
+  position: relative;
+  z-index: 1;
+  padding: 16px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.ruixen-includes {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.ruixen-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.ruixen-bill-status {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 12px;
+  height: 20px; 
+}
