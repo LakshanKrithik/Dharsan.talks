@@ -1,7 +1,9 @@
 .value {
   background: var(--bg-secondary);
-  border-top: 1px solid rgba(255,255,255,0.04);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 160px 24px;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
 
 .value-inner {

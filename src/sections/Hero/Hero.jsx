@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import Dither from '../../components/Dither/Dither';
+import { SparklesCore } from '../../components/ui/sparkles';
 import BlurText from '../../components/BlurText/BlurText';
+import ImageAutoSlider from '../../components/ui/ImageAutoSlider';
 import './Hero.css';
 
 const SKOOL_URL = '#pricing';
@@ -16,19 +17,20 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      {/* Dither background */}
-      <div className="hero-dither">
-        <Dither
-          waveColor={[0.13333333333333333, 0.3176470588235294, 0.6196078431372549]}
-          disableAnimation={false}
-          enableMouseInteraction={true}
-          mouseRadius={0.3}
-          colorNum={4}
-          waveAmplitude={0.3}
-          waveFrequency={3}
-          waveSpeed={0.05}
-          pixelSize={2}
+      {/* Sparkles background */}
+      <div className="hero-dither" style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="#080808"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+          speed={1}
         />
+        {/* Radial Gradient mask for seamless fade at the bottom to merge with ValueProp layout */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 70%, var(--bg-secondary) 100%)', pointerEvents: 'none' }} />
       </div>
 
       {/* Bottom fade overlay */}
@@ -44,17 +46,27 @@ export default function Hero() {
           6-Week Live Cohort · Starts Soon
         </motion.div>
 
-        <BlurText
-          text="Speak with Authority and Charisma to Inspire and Stand Out"
-          delay={140}
-          animateBy="words"
-          direction="top"
-          className="hero-title font-bebas"
-        />
+        <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
+          {/* Gradients like the demo to look premium */}
+          <div style={{ position: 'absolute', top: '-10px', left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--accent), transparent)', filter: 'blur(4px)', opacity: 0.6 }} />
+          <div style={{ position: 'absolute', top: '-10px', left: '20%', right: '20%', height: '1px', background: 'linear-gradient(90deg, transparent, var(--accent-light), transparent)' }} />
+          
+          <BlurText
+            text="Speak with Authority and Charisma to Inspire and Stand Out"
+            delay={140}
+            animateBy="words"
+            direction="top"
+            className="hero-title font-bebas"
+            style={{ textAlign: 'center' }}
+          />
+        </div>
 
-        <motion.p className="hero-subtitle" variants={fadeUp(0.28)}>
-          Dedicate <strong>6 Weeks</strong> of Your Life to Master the{' '}
-          <strong>Most Valuable Skill Ever.</strong>
+        <motion.div variants={fadeUp(0.2)}>
+          <ImageAutoSlider />
+        </motion.div>
+
+        <motion.p className="hero-subtitle" variants={fadeUp(0.28)} style={{ fontWeight: '700', fontSize: '1.15rem', color: 'var(--text-primary)' }}>
+          Dedicate 6 weeks of Your Life to Master the Most Valuable Skill Ever!
         </motion.p>
 
         <motion.div className="hero-cta-group" variants={fadeUp(0.4)}>
@@ -66,18 +78,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Scroll hint */}
-      <motion.div
-        className="hero-scroll-hint"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-      >
-        <div className="scroll-mouse">
-          <div className="scroll-wheel" />
-        </div>
-        <span>Scroll</span>
-      </motion.div>
     </section>
   );
 }

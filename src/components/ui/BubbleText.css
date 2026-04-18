@@ -1,0 +1,31 @@
+.bubble-text-container {
+  text-align: left;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: var(--text-secondary);
+  cursor: default;
+  line-height: 1.25;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.bubble-char {
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.bubble-char.hover-0 {
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.bubble-char.hover-1 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.bubble-char.hover-2 {
+  font-weight: 400;
+}

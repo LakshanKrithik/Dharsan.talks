@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlus } from 'react-icons/fa6';
+import { SparklesCore } from '../../components/ui/SparklesCore';
 import './FAQ.css';
 
 const faqs = [
@@ -42,8 +43,27 @@ export default function FAQ() {
   };
 
   return (
-    <section className="section faq" id="faq">
-      <div className="container">
+    <section className="section faq" id="faq" style={{ position: 'relative', overflow: 'hidden' }}>
+      
+      {/* Background Sparkles Effect strictly bound to the FAQ section back layer */}
+      <div style={{ 
+        position: 'absolute', 
+        inset: 0, 
+        zIndex: 0,
+        pointerEvents: 'none'
+      }}>
+        <SparklesCore
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.5}
+          particleDensity={50} // Lowered slightly so text remains 100% legible
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+          speed={0.8}
+        />
+      </div>
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div
           className="faq-header"
           initial={{ opacity: 0, y: 24 }}

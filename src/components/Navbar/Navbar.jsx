@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 const links = [
-  { label: 'About',      href: '#value' },
-  { label: 'Curriculum', href: '#curriculum' },
-  { label: 'Pricing',    href: '#pricing' },
-  { label: 'FAQ',        href: '#faq' },
+  { label: 'About',              href: '#value' },
+  { label: 'Curriculum',         href: '#curriculum' },
+  { label: 'Pricing',            href: '#pricing' },
+  { label: 'FAQ',                href: '#faq' },
 ];
 
 export default function Navbar() {
@@ -34,6 +34,10 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="navbar-inner">
+          <div className="navbar-logo">
+            dharsan.talks
+          </div>
+
           <ul className="navbar-links">
             {links.map(l => (
               <li key={l.label}>
