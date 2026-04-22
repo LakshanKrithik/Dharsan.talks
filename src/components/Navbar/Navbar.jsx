@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import TrueFocus from '../ui/TrueFocus';
 import './Navbar.css';
 
 const links = [
-  { label: 'Why us',             href: '#value' },
-  { label: "What you'll learn",  href: '#curriculum' },
-  { label: 'Pricing',            href: '#pricing' },
-  { label: 'Hire from us',       href: '#contact' },
+  { label: 'About',      href: '#value' },
+  { label: 'Curicullum', href: '#curriculum' },
+  { label: 'Perks',      href: '#contact' },
+  { label: 'Pricing',    href: '#pricing' },
 ];
 
 export default function Navbar() {
@@ -35,17 +34,8 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="navbar-inner">
-          <div className="navbar-logo">
-            <TrueFocus
-              sentence="dharsan.talks"
-              separator="."
-              manualMode={false}
-              blurAmount={4}
-              borderColor="rgba(255, 255, 255, 0.9)"
-              glowColor="rgba(255, 255, 255, 0.3)"
-              animationDuration={0.8}
-              pauseBetweenAnimations={0.5}
-            />
+          <div className="navbar-logo bebas-neue-regular">
+            dharsan.talks
           </div>
 
           <ul className="navbar-links">

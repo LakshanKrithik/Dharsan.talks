@@ -89,11 +89,11 @@
 .item-text {
   color: #fff;
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.85rem;
+  font-weight: 900;
   flex: 1;
   line-height: 1.25;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .expand-icon {
@@ -132,19 +132,19 @@
 }
 
 .item-modules-img-style li {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: flex-start;
   gap: 12px;
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .item-modules-img-style li span {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
-  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.35rem;
+  font-weight: 600;
   margin-top: -2px;
 }
 

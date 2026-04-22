@@ -72,6 +72,12 @@ a {
   letter-spacing: 0.05em;
 }
 
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .font-sekuya {
   font-family: 'Sekuya', system-ui, sans-serif;
 }

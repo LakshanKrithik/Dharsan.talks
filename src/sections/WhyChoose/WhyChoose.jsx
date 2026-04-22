@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import GlassSurface from '../../components/ui/GlassSurface';
 import MagicRings from '../../components/ui/MagicRings';
 import GradientText from '../../components/GradientText/GradientText';
+import ShinyText from '../../components/ui/ShinyText';
 import dharsanImg from '../../assets/d2.png';
 import './WhyChoose.css';
 
@@ -74,14 +75,7 @@ export default function WhyChoose() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <GradientText
-            colors={["#6391F5", "#a78bfa", "#6391F5", "#4427c4", "#6391F5"]}
-            animationSpeed={5}
-            showBorder={false}
-            className="why-tag-gradient"
-          >
-            Why This Cohort
-          </GradientText>
+
 
           <h2 className="section-heading why-heading">
             <GradientText
@@ -132,9 +126,17 @@ export default function WhyChoose() {
                     <div className="why-card-number ibm-plex-sans-condensed-bold">
                       {String(i + 1).padStart(2, '0')}
                     </div>
-                    <div>
-                      <h3 className="why-card-title ibm-plex-sans-condensed-semibold">{card.title}</h3>
-                      <p className="why-card-desc ibm-plex-sans-condensed-regular">{card.desc}</p>
+                    <div className="why-card-text">
+                      <h3 className="why-card-title ibm-plex-sans-condensed-semibold">
+                        <ShinyText 
+                          text={card.title} 
+                          speed={3} 
+                          color="rgba(255, 255, 255, 0.85)" 
+                          shineColor="#ffffff" 
+                          spread={120} 
+                        />
+                      </h3>
+                      <p className="why-card-desc ibm-plex-sans-condensed-bold">{card.desc}</p>
                     </div>
                   </div>
                 </GlassSurface>
@@ -177,9 +179,17 @@ export default function WhyChoose() {
                     <div className="why-card-number ibm-plex-sans-condensed-bold">
                       {String(i + 3).padStart(2, '0')}
                     </div>
-                    <div>
-                      <h3 className="why-card-title ibm-plex-sans-condensed-semibold">{card.title}</h3>
-                      <p className="why-card-desc ibm-plex-sans-condensed-regular">{card.desc}</p>
+                    <div className="why-card-text">
+                      <h3 className="why-card-title ibm-plex-sans-condensed-semibold">
+                        <ShinyText 
+                          text={card.title} 
+                          speed={3} 
+                          color="rgba(255, 255, 255, 0.85)" 
+                          shineColor="#ffffff" 
+                          spread={120} 
+                        />
+                      </h3>
+                      <p className="why-card-desc ibm-plex-sans-condensed-bold">{card.desc}</p>
                     </div>
                   </div>
                 </GlassSurface>

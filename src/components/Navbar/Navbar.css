@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   height: auto;
-  padding: 10px 10px 10px 32px;
+  padding: 14px 14px 14px 40px;
   background: rgba(4, 5, 6, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -27,10 +27,10 @@
 }
 
 .navbar-logo {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #ffffff;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .navbar-links {
@@ -69,8 +69,8 @@
 
 .navbar-cta {
   padding: 12px 28px;
-  background: #EBFF00; /* Flat neon yellow */
-  color: #0a0800;
+  background: var(--accent); /* Theme blue */
+  color: #ffffff;
   font-size: 0.9rem;
   font-weight: 700;
   border-radius: 100px;
@@ -82,7 +82,8 @@
 
 .navbar-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+  background: var(--accent-light);
+  box-shadow: 0 8px 24px var(--accent-glow);
 }
 
 .hamburger {
@@ -133,8 +134,8 @@
 
 .mobile-cta {
   padding: 14px 40px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: #0a0800;
+  background: var(--accent);
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 700;
   border-radius: 100px;
@@ -142,6 +143,10 @@
   border: none;
   font-family: 'Inter', sans-serif;
   margin-top: 12px;
+}
+
+.mobile-cta:hover {
+  background: var(--accent-light);
 }
 
 @media (max-width: 768px) {

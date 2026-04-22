@@ -97,12 +97,12 @@ export default function Curriculum() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 0 20px' }}
         >
-          <span className="section-tag">The Curriculum</span>
+
           
           <AnimatedText 
             text="The end-to-end curriculum that lets you handle any conversation confidently" 
             textClassName="section-heading"
-            style={{ fontSize: '3.2rem', lineHeight: 1.15, maxWidth: '1000px', margin: '16px auto 0' }}
+            style={{ fontSize: '3.2rem', lineHeight: 1.15, maxWidth: '1000px', margin: '16px auto 0', textAlign: 'center' }}
             gradientColors="linear-gradient(90deg, rgba(255,255,255,0.4), #ffffff, rgba(255,255,255,0.4))"
             gradientAnimationDuration={4}
           />

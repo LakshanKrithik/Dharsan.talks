@@ -29,9 +29,9 @@ export default function Footer() {
 
       {/* Massive Full Width Brand Typography Layer dynamically adapting across breakpoints */}
       <div className="massive-header-wrapper">
-        <div className="footer-focus-container">
+        <div className="footer-focus-container ibm-plex-sans-condensed-bold">
             <TrueFocus 
-              sentence="dharsan. talks" 
+              sentence="dharsan.talks" 
               manualMode={false} 
               blurAmount={5} 
               borderColor="#5227FF" 

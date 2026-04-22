@@ -8,7 +8,7 @@ export default function RuixenPricing({ plans, contactHref }) {
     return (
         <div className="ruixen-wrapper">
             <div className="ruixen-header-flex">
-                <span className="section-tag" style={{ display: 'block', margin: '0 auto 16px', textAlign: 'center' }}>Enrollment</span>
+
                 
                 <h2 className="ruixen-title">Pricing</h2>
                 <p className="ruixen-subtitle" style={{ marginBottom: "20px" }}>

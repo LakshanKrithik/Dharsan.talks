@@ -11,6 +11,11 @@
   gap: 0;
 }
 
+.bubble-word {
+  display: inline-flex;
+  white-space: pre;
+}
+
 .bubble-char {
   transition: all 0.3s ease-in-out;
   display: inline-block;

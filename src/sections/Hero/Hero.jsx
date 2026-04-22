@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { SparklesCore } from '../../components/ui/sparkles';
 import ShinyText from '../../components/ui/ShinyText';
-import ImageAutoSlider from '../../components/ui/ImageAutoSlider';
+import heroBg from '../../assets/d3.mp4';
 import './Hero.css';
 
 const SKOOL_URL = '#pricing';
@@ -17,6 +17,18 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section className="hero" id="hero">
+      {/* Background video */}
+      <video
+        className="hero-video"
+        src={heroBg}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Blur + gradient overlay for readability */}
+      <div className="hero-video-overlay" />
       {/* Sparkles background */}
       <div className="hero-dither" style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
         <SparklesCore
@@ -64,9 +76,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <motion.div variants={fadeUp(0.2)}>
-          <ImageAutoSlider />
-        </motion.div>
+
 
         <motion.p className="hero-subtitle" variants={fadeUp(0.28)} style={{ fontWeight: '700', fontSize: '1.15rem', color: 'var(--text-primary)' }}>
           Dedicate 6 weeks of Your Life to Master the Most Valuable Skill Ever!
