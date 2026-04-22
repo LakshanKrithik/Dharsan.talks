@@ -2,33 +2,66 @@
   position: relative;
   overflow: hidden;
   background-color: #050505;
-  padding: 40px 0 0 0;
+  padding: 60px 0 0 0;
 }
 
 .massive-header-wrapper {
   position: relative;
   z-index: 1;
   display: flex;
-  justify-content: center; /* Ensures the text is perfectly centered */
+  justify-content: space-between; /* Push text to left, content to right */
   align-items: center;
-  padding: 0 4%;
+  padding: 0 8%;
   width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .footer-focus-container {
   display: flex;
-  justify-content: center; /* Centers its inner content */
+  justify-content: flex-start;
   font-size: clamp(3rem, 7vw, 10rem);
   line-height: 1;
   letter-spacing: -0.02em;
   padding-bottom: 0;
+  transform: translateX(-20px); /* Move font to the left a bit */
+}
+
+.footer-right-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 120px; /* Increased gap to push socials further right */
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: right;
+  position: relative;
+}
+
+.footer-nav-col a {
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color var(--transition), transform var(--transition);
+  position: relative;
+  display: inline-block;
+}
+
+.footer-nav-col a:hover {
+  color: var(--white);
+  transform: translateX(-4px);
 }
 
 .footer-socials {
-  position: absolute;
-  right: 4%;
   display: flex;
-  flex-direction: row; /* display yt and ig parallel (side by side) */
+  flex-direction: column;
   gap: 24px;
   align-items: center;
   flex-shrink: 0;
@@ -60,41 +93,78 @@
 .footer-bottom {
   position: relative;
   z-index: 1;
-  padding: 12px 0;
+  padding: 20px 0;
+  margin-top: 60px;
   text-align: center;
   color: rgba(255, 255, 255, 0.3);
   font-size: 1rem;
   background-color: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Mobile Architectures natively handling horizontal breakage */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .massive-header-wrapper {
-    flex-direction: column-reverse; /* Push icons upwards above typography sitting flush on floor */
+    flex-direction: column;
     justify-content: center;
-    gap: 40px;
-    padding-bottom: 12px;
-    padding-top: 24px;
+    gap: 60px;
+    padding: 40px 6% 0;
     align-items: center;
   }
   
   .footer-focus-container {
     justify-content: center;
+    transform: none;
     width: 100%;
+    font-size: clamp(2.5rem, 8vw, 7rem);
+  }
+
+  .footer-right-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .footer-nav-col {
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .footer-nav-col a:hover {
+    transform: none;
   }
 
   .footer-socials {
-    position: relative;
-    right: auto;
-    flex-direction: row; /* Horizontal tracking mapping for space efficiency */
-    justify-content: center;
-    align-items: center;
-    margin-left: 0;
-    padding-bottom: 0;
+    flex-direction: row;
     gap: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0 0 0;
+  }
+
+  .massive-header-wrapper {
+    gap: 40px;
+    padding: 24px 5% 0;
+  }
+
+  .footer-focus-container {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .footer-nav-col a {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
   }
 
   .footer-socials a {
-    font-size: 3.2rem; /* Soft scaling reduction tightly wrapping smaller screens */
+    font-size: 2.8rem;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    padding: 16px 0;
+    font-size: 0.85rem;
   }
 }

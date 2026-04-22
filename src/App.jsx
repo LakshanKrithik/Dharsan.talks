@@ -6,6 +6,7 @@ import WhyChoose from './sections/WhyChoose/WhyChoose';
 import Pricing from './sections/Pricing/Pricing';
 import FAQ from './sections/FAQ/FAQ';
 import Footer from './sections/Footer/Footer';
+import { FloatingPaths } from './components/ui/BackgroundPaths';
 
 function App() {
   return (
@@ -17,8 +18,21 @@ function App() {
         <ValueProp />
         <Curriculum />
         <WhyChoose />
-        <Pricing />
-        <FAQ />
+        
+        <div style={{ position: 'relative' }}>
+          {/* Shared background for Pricing and FAQ to blend animations together */}
+          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+            <div style={{ position: 'sticky', top: 0, height: '100vh', width: '100%', overflow: 'hidden', opacity: 0.8 }}>
+              <FloatingPaths position={1} />
+              <FloatingPaths position={-1} />
+            </div>
+          </div>
+          
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <Pricing />
+            <FAQ />
+          </div>
+        </div>
       </main>
       <Footer />
     </>

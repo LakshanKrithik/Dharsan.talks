@@ -88,21 +88,21 @@ export default function Curriculum() {
         />
       </div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1400px' }}>
         <motion.div
           className="curriculum-header"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 0 20px' }}
+          style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 0 20px', maxWidth: '1200px', margin: '0 auto' }}
         >
 
           
           <AnimatedText 
             text="The end-to-end curriculum that lets you handle any conversation confidently" 
             textClassName="section-heading"
-            style={{ fontSize: '3.2rem', lineHeight: 1.15, maxWidth: '1000px', margin: '16px auto 0', textAlign: 'center' }}
+            style={{ fontSize: '3.2rem', lineHeight: 1.15, maxWidth: '1100px', margin: '16px auto 0', textAlign: 'center' }}
             gradientColors="linear-gradient(90deg, rgba(255,255,255,0.4), #ffffff, rgba(255,255,255,0.4))"
             gradientAnimationDuration={4}
           />
@@ -121,8 +121,8 @@ export default function Curriculum() {
 
         <div className="curriculum-cta" style={{ marginTop: '30px', display: 'flex', justifyContent: 'center' }}>
           <a href={SKOOL_URL}>
-            <button className="btn-accent">
-              <span>Join the Cohort →</span>
+            <button className="btn-accent shiny-silver-border">
+              <span>Join</span>
             </button>
           </a>
         </div>

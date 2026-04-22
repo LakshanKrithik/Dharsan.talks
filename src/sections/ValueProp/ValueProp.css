@@ -1,6 +1,6 @@
 .value {
-  background: var(--bg-secondary);
-  padding: 160px 24px;
+  background: linear-gradient(to bottom, var(--bg-secondary) 85%, var(--bg-primary) 100%);
+  padding: 100px 24px;
   min-height: 85vh;
   display: flex;
   align-items: center;
@@ -102,5 +102,16 @@
     transform: translateX(-50%);
     top: 60px;
     height: calc(100% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .value {
+    padding: 70px 18px;
+    min-height: unset;
+  }
+
+  .value-inner {
+    gap: 36px;
   }
 }

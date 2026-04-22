@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import RuixenPricing from '../../components/ui/RuixenPricing';
-import { FloatingPaths } from '../../components/ui/BackgroundPaths';
 import './Pricing.css';
 
 const SKOOL_URL = '#pricing';
@@ -40,14 +39,7 @@ export default function Pricing() {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="section pricing" id="pricing" style={{ padding: '80px 0 120px', position: 'relative', overflow: 'hidden' }}>
-      
-      {/* Dynamic Floating Path Background Wrapper */}
-      <div style={{ position: 'absolute', inset: 0, opacity: 0.8 }}>
-          <FloatingPaths position={1} />
-          <FloatingPaths position={-1} />
-      </div>
-
+    <section className="section pricing" id="pricing" style={{ padding: '80px 0 120px', position: 'relative' }}>
       <div className="container" ref={ref} style={{ position: 'relative', zIndex: 1 }}>
          <motion.div
             initial={{ opacity: 0, y: 40 }}

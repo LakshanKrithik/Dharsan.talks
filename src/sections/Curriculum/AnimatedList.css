@@ -1,7 +1,7 @@
 .scroll-list-container {
   position: relative;
   width: 100%;
-  max-width: 1200px; /* Increased to allow comfortable 2-column side-by-side */
+  max-width: 1400px; /* Increased to allow comfortable 2-column side-by-side */
   margin: 0 auto;
 }
 

@@ -174,6 +174,16 @@ a {
 
 .btn-accent span { position: relative; z-index: 1; }
 
+/* ── Shiny Silver Border ────────────────────────────────── */
+.shiny-silver-border {
+  border: 1.5px solid rgba(230, 230, 250, 0.9) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.3) !important;
+}
+
+.shiny-silver-border:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), inset 0 0 15px rgba(255, 255, 255, 0.5) !important;
+}
+
 /* ── Gold Divider ───────────────────────────────────────── */
 .accent-divider {
   width: 60px;
@@ -202,4 +212,34 @@ a {
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   .section { padding: 70px 20px; }
+
+  .section-heading {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .section-subtext {
+    font-size: 1rem;
+  }
+
+  .btn-accent {
+    padding: 14px 32px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 16px;
+  }
+
+  .section { padding: 56px 16px; }
+
+  .section-heading {
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
+  }
+
+  .btn-accent {
+    padding: 13px 28px;
+    font-size: 0.88rem;
+  }
 }

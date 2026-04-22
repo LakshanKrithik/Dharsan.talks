@@ -113,14 +113,27 @@
   .curriculum-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .curriculum-header {
+    margin-bottom: 44px;
+  }
 }
 
 @media (max-width: 580px) {
   .curriculum-grid {
     grid-template-columns: 1fr;
   }
+
+  .session-card {
+    padding: 22px 18px;
+  }
+
+  .session-title {
+    font-size: 1.1rem;
+  }
 }
 
 .curriculum-grid-expanded { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
 @media (max-width: 900px) { .curriculum-grid-expanded { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 580px) { .curriculum-grid-expanded { grid-template-columns: 1fr; } }
+

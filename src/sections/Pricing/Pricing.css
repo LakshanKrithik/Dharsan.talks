@@ -1,5 +1,5 @@
 .pricing {
-  background: var(--bg-primary);
+  background: transparent;
 }
 
 .pricing-header {
@@ -170,5 +170,19 @@
   .pricing-header .section-subtext {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card {
+    padding: 28px 22px;
+  }
+
+  .pricing-card-price {
+    font-size: 2.2rem;
+  }
+
+  .pricing-card-name {
+    font-size: 1.2rem;
   }
 }

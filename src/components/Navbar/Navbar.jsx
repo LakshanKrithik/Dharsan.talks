@@ -48,8 +48,8 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <button className="navbar-cta" onClick={() => handleScroll('#pricing')}>
-            Join Now
+          <button className="navbar-cta shiny-silver-border" onClick={() => handleScroll('#pricing')}>
+            Join
           </button>
 
           <div className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
@@ -81,8 +81,8 @@ export default function Navbar() {
                 {l.label}
               </motion.a>
             ))}
-            <button className="mobile-cta" onClick={() => { handleScroll('#pricing'); setMenuOpen(false); }}>
-              Join Now
+            <button className="mobile-cta shiny-silver-border" onClick={() => { handleScroll('#pricing'); setMenuOpen(false); }}>
+              Join
             </button>
           </motion.div>
         )}
