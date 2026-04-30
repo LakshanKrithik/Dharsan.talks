@@ -160,7 +160,20 @@
   }
 
   .hero-video-wrapper {
-    display: none; /* Hide videos on small screens to keep focus on text */
+    width: 26vw;
+    min-width: 100px;
+  }
+  
+  .video-left {
+    left: -2vw;
+  }
+
+  .video-right {
+    right: -2vw;
+  }
+  
+  .hero-video {
+    opacity: 0.35;
   }
 }
 
@@ -179,6 +192,23 @@
 
   .hero-cta-group a, .hero-cta-group button {
     width: 100%;
+  }
+
+  .hero-video-wrapper {
+    width: 28vw;
+    min-width: 80px;
+  }
+
+  .video-left {
+    left: -4vw;
+  }
+
+  .video-right {
+    right: -4vw;
+  }
+  
+  .hero-video {
+    opacity: 0.25;
   }
 }
 
@@ -219,7 +249,7 @@
 }
 
 .hero-video-wrapper:hover {
-  transform: translateY(-50%) rotate(0deg) scale(1.05) !important;
+  transform: translateY(-50%) scale(1.05) !important;
   box-shadow: 0 30px 60px -10px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.15), 0 0 80px rgba(99, 145, 245, 0.25);
   z-index: 10;
 }

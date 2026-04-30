@@ -29,8 +29,8 @@ export default function Hero() {
       <div className="hero-videos-container">
         <motion.div 
           className="hero-video-wrapper video-left"
-          initial={{ opacity: 0, x: -80, y: '-50%', rotate: -12 }}
-          animate={{ opacity: 1, x: 0, y: '-50%', rotate: -6 }}
+          initial={{ opacity: 0, x: -80, y: '-50%' }}
+          animate={{ opacity: 1, x: 0, y: '-50%' }}
           transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         >
           <video src={d3} className="hero-video" autoPlay loop muted playsInline />
@@ -39,8 +39,8 @@ export default function Hero() {
 
         <motion.div 
           className="hero-video-wrapper video-right"
-          initial={{ opacity: 0, x: 80, y: '-50%', rotate: 12 }}
-          animate={{ opacity: 1, x: 0, y: '-50%', rotate: 6 }}
+          initial={{ opacity: 0, x: 80, y: '-50%' }}
+          animate={{ opacity: 1, x: 0, y: '-50%' }}
           transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
         >
           <video src={d4} className="hero-video" autoPlay loop muted playsInline />
