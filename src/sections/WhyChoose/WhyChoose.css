@@ -20,8 +20,8 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  min-height: 130vh; /* Increased from 100vh to make the page and image vertically longer */
-  padding: 100px 32px 0; /* Increased top padding */
+  min-height: auto;
+  padding: 100px 32px 0;
   max-width: 1600px !important; /* Forces container to take more empty space relative to global container */
   margin: 0 auto;
 }
@@ -73,7 +73,7 @@
 /* ─── Three-column grid ──────────────────────────────── */
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr 480px 1fr; /* Increased image column width slightly to match new height */
+  grid-template-columns: 1fr clamp(300px, 30vw, 480px) 1fr;
   align-items: stretch;
   gap: 40px; /* Slightly more gap as container expands */
   flex: 1;

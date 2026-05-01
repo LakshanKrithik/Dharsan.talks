@@ -93,7 +93,8 @@
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  padding: 6px;
+  padding: 12px; /* Minimum 44px touch target */
+  margin: -6px; /* Offset padding */
 }
 
 .hamburger span {
@@ -128,6 +129,7 @@
   font-weight: 800;
   color: var(--text-primary);
   transition: color var(--transition);
+  padding: 10px; /* Touch target area */
 }
 
 .mobile-menu a:hover {

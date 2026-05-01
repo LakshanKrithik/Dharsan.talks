@@ -107,11 +107,11 @@
 
 @media (max-width: 600px) {
   .value {
-    padding: 70px 18px;
+    padding: 50px 16px;
     min-height: unset;
   }
 
   .value-inner {
-    gap: 36px;
+    gap: 24px;
   }
 }

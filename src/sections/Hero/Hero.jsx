@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import { ShaderAnimation } from '../../components/ui/ShaderAnimation';
-import ShinyText from '../../components/ui/ShinyText';
-import d3 from '../../assets/d3.mp4';
-import d4 from '../../assets/d4.mp4';
+import { AnimatedText } from '../../components/ui/AnimatedText';
 import './Hero.css';
 
 const SKOOL_URL = '#pricing';
@@ -25,29 +23,6 @@ export default function Hero() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 70%, var(--bg-secondary) 100%)', pointerEvents: 'none', zIndex: 2 }} />
       </div>
 
-      {/* Videos on left and right */}
-      <div className="hero-videos-container">
-        <motion.div 
-          className="hero-video-wrapper video-left"
-          initial={{ opacity: 0, x: -80, y: '-50%' }}
-          animate={{ opacity: 1, x: 0, y: '-50%' }}
-          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-        >
-          <video src={d3} className="hero-video" autoPlay loop muted playsInline />
-          <div className="video-overlay" />
-        </motion.div>
-
-        <motion.div 
-          className="hero-video-wrapper video-right"
-          initial={{ opacity: 0, x: 80, y: '-50%' }}
-          animate={{ opacity: 1, x: 0, y: '-50%' }}
-          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-        >
-          <video src={d4} className="hero-video" autoPlay loop muted playsInline />
-          <div className="video-overlay" />
-        </motion.div>
-      </div>
-
       {/* Bottom fade overlay */}
       <div className="hero-overlay" />
 
@@ -58,23 +33,14 @@ export default function Hero() {
         animate="visible"
       >
         <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          {/* Gradients like the demo to look premium */}
-          <div style={{ position: 'absolute', top: '-10px', left: '10%', right: '10%', height: '2px', background: 'linear-gradient(90deg, transparent, var(--accent), transparent)', filter: 'blur(4px)', opacity: 0.6 }} />
-          <div style={{ position: 'absolute', top: '-10px', left: '20%', right: '20%', height: '1px', background: 'linear-gradient(90deg, transparent, var(--accent-light), transparent)' }} />
-          
           <div style={{ textAlign: 'center', width: '100%', zIndex: 10 }}>
-            <ShinyText
-              text={<>Speak with <span className="text-blue font-display" style={{ fontStyle: 'italic', fontWeight: '500', paddingRight: '4px' }}>Authority</span><br/> and <span className="text-blue font-display" style={{ fontStyle: 'italic', fontWeight: '500', paddingRight: '4px' }}>Charisma</span> to<br/> Inspire and Stand Out</>}
-              speed={2}
-              delay={0}
-              color="rgba(255, 255, 255, 0.7)"
-              shineColor="#ffffff"
-              spread={120}
-              direction="left"
-              yoyo
-              pauseOnHover={false}
-              disabled={false}
-              className="hero-title"
+            <AnimatedText
+              text={<>Speak with <span className="font-display" style={{ WebkitTextFillColor: '#3D6ED6', color: '#3D6ED6', fontStyle: 'italic', fontWeight: '400', padding: '0 12px' }}>Authority</span> <br/> and <span className="font-display" style={{ WebkitTextFillColor: '#3D6ED6', color: '#3D6ED6', fontStyle: 'italic', fontWeight: '400', padding: '0 12px' }}>Charisma</span> <br/> to Inspire and Stand Out</>}
+              hoverEffect={true}
+              gradientColors="linear-gradient(90deg, #ffffff, #b3b3b3, #ffffff, #e6e6e6, #ffffff)"
+              gradientAnimationDuration={3}
+              textClassName="hero-title"
+              style={{ lineHeight: '1.4' }}
             />
           </div>
         </div>
