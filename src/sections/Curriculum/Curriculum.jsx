@@ -1,131 +1,122 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import AnimatedList from './AnimatedList';
-import { AnimatedText } from '../../components/ui/AnimatedText';
-import { SparklesCore } from '../../components/ui/SparklesCore';
+import { motion } from 'framer-motion';
 import './Curriculum.css';
 
 const SKOOL_URL = '#pricing';
 
 const sessions = [
   {
-    num: 'Session 01',
-    title: 'Speech & Thought Clarity',
+    num: '1',
+    title: 'Foundation Mastery',
     modules: [
       'Improving Speech & Thought Clarity',
       'Integrating Pauses to Become a Powerful Speaker',
       'Controlling Pace to Control Speech Delivery',
-    ],
+    ]
   },
   {
-    num: 'Session 02',
-    title: 'Vocal Power & Expression',
+    num: '2',
+    title: 'Pitch & Emotion',
     modules: [
       'Understanding Pitch to Convey Emotions',
-      'Using Emphasis to Make Your Speech Irresistible',
-      'How to Record and Review Your Footages',
-    ],
+      'Using Emphasis to make your Speech Irresistible',
+      'How to record and review your footages',
+    ]
   },
   {
-    num: 'Session 03',
-    title: 'Language & Presence',
+    num: '3',
+    title: 'Dynamic Vocabulary',
     modules: [
-      'Developing a Dynamic Vocabulary Arsenal using AI',
-      'Developing Your Unique Surface Lexicon using AI',
+      'Developing A Dynamic Vocabulary Arsenal using AI',
+      'Developing your Unique Surface Lexicon using AI',
       'Speaking with Body Language and Facial Expressions',
-    ],
+    ]
   },
   {
-    num: 'Session 04',
-    title: 'Structure & Identity',
+    num: '4',
+    title: 'Structure & Accent',
     modules: [
       'Speaking with Structure',
-      'Strengthening Your Mind-to-Mouth Connection',
+      'Strengthening your Mind-to-mouth connection',
       'Improving Your Thick Indian Accent',
-    ],
+    ]
   },
   {
-    num: 'Session 05',
-    title: 'Personality & Authority',
+    num: '5',
+    title: 'Personality & Charisma',
     modules: [
       'Building on Your Personality to Make You Stand Out',
       'Speaking with Competence to Make People Respect You',
       'Speaking with Charisma to Make People Like You',
-    ],
+    ]
   },
   {
-    num: 'Session 06',
-    title: 'Confidence & Social Mastery',
+    num: '6',
+    title: 'Confidence & Banter',
     modules: [
       'Speaking with Confidence and Handling Anxiety',
       'How to Become an Interesting Story Teller',
       'Mastering Witty Banter to Become Socially Likable',
-    ],
+    ]
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+};
+
 export default function Curriculum() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-60px' });
-
   return (
-    <section className="section curriculum" id="curriculum" style={{ position: 'relative' }}>
-      {/* Sparkles Background spanning the ENTIRE third page section */}
-      <div style={{ 
-        position: 'absolute', 
-        inset: 0, 
-        zIndex: 0,
-        pointerEvents: 'none'
-      }}>
-        <SparklesCore
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.5}
-          particleDensity={60} // Lowered slightly since it covers the entire section now
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-          speed={0.8}
-        />
-      </div>
-
-      <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1400px' }}>
+    <section className="curriculum" id="curriculum">
+      <div className="curriculum-container">
         <motion.div
           className="curriculum-header"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '0 0 20px', maxWidth: '1200px', margin: '0 auto' }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={fadeUp}
         >
-
-          
-          <AnimatedText 
-            text={<>This Curicullum is Designed to help you handle any Conversation <span style={{ textShadow: '0 0 40px rgba(0, 85, 255, 0.8), 0 0 20px rgba(0, 85, 255, 0.6)' }}>Confidently</span></>} 
-            textClassName="section-heading"
-            style={{ fontSize: '3.2rem', lineHeight: 1.15, maxWidth: '1100px', margin: '16px auto 0', textAlign: 'center' }}
-            gradientColors="linear-gradient(90deg, rgba(255,255,255,0.4), #ffffff, rgba(255,255,255,0.4))"
-            gradientAnimationDuration={4}
-          />
+          <h1 className="curriculum-main-title">
+            This curriculum is designed to help you handle any conversation <span className="cursive-text">confidently</span>
+          </h1>
         </motion.div>
 
-        <div className="curriculum-interactive" ref={ref} style={{ marginTop: '30px', display: 'flex', justifyContent: 'center' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-          >
-            <AnimatedList items={sessions} displayScrollbar={false} />
-          </motion.div>
+        <div className="curriculum-bento-grid">
+          {sessions.map((session, index) => (
+            <motion.div
+              key={session.num}
+              className="curriculum-card"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.2, 0, 0, 1] }}
+            >
+              <div className="curriculum-card-header">
+                <span className="curriculum-number">{session.num}</span>
+                <h2 className="curriculum-card-title" dangerouslySetInnerHTML={{ __html: session.title.replace(' & ', '&<br>') }} />
+              </div>
+              <ul>
+                {session.modules.map((module, mIdx) => (
+                  <li key={mIdx}>{module}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="curriculum-cta" style={{ marginTop: '30px', display: 'flex', justifyContent: 'center' }}>
+        <motion.div 
+          className="curriculum-bottom-btn-container"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+        >
           <a href={SKOOL_URL}>
-            <button className="btn-brutal">
-              JOIN
+            <button className="curriculum-accent-btn">
+              Join Now
             </button>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
