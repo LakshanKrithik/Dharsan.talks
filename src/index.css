@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
 /* ── Design Tokens ─────────────────────────────────────── */
 :root {
   --bg-primary:    #080808;
@@ -173,6 +175,32 @@ a {
 }
 
 .btn-accent span { position: relative; z-index: 1; }
+
+/* ── Brutal Button ──────────────────────────────────────── */
+.btn-brutal {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  background-color: #0055ff;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-brutal:hover {
+  background-color: #ffffff;
+  color: #0055ff;
+}
+
+.btn-brutal:active {
+  transform: scale(0.95);
+}
 
 /* ── Shiny Silver Border ────────────────────────────────── */
 .shiny-silver-border {

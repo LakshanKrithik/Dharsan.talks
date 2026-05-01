@@ -64,7 +64,7 @@ export default function Hero() {
           
           <div style={{ textAlign: 'center', width: '100%', zIndex: 10 }}>
             <ShinyText
-              text={<>Speak with <span className="text-blue">Authority</span><br/> and <span className="text-blue">Charisma</span> to<br/> Inspire and Stand Out</>}
+              text={<>Speak with <span className="text-blue font-display" style={{ fontStyle: 'italic', fontWeight: '500', paddingRight: '4px' }}>Authority</span><br/> and <span className="text-blue font-display" style={{ fontStyle: 'italic', fontWeight: '500', paddingRight: '4px' }}>Charisma</span> to<br/> Inspire and Stand Out</>}
               speed={2}
               delay={0}
               color="rgba(255, 255, 255, 0.7)"
@@ -85,8 +85,8 @@ export default function Hero() {
 
         <motion.div className="hero-cta-group" variants={fadeUp(0.4)} style={{ marginTop: '40px' }}>
           <a href={SKOOL_URL}>
-            <button className="btn-accent shiny-silver-border" style={{ transform: 'scale(1.1)' }}>
-              <span>Join</span>
+            <button className="btn-brutal" style={{ transform: 'scale(1.1)' }}>
+              JOIN
             </button>
           </a>
         </motion.div>

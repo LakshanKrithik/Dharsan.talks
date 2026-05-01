@@ -100,7 +100,7 @@ export default function Curriculum() {
 
           
           <AnimatedText 
-            text="The end-to-end curriculum that lets you handle any conversation confidently" 
+            text={<>This Curicullum is Designed to help you handle any Conversation <span style={{ textShadow: '0 0 40px rgba(0, 85, 255, 0.8), 0 0 20px rgba(0, 85, 255, 0.6)' }}>Confidently</span></>} 
             textClassName="section-heading"
             style={{ fontSize: '3.2rem', lineHeight: 1.15, maxWidth: '1100px', margin: '16px auto 0', textAlign: 'center' }}
             gradientColors="linear-gradient(90deg, rgba(255,255,255,0.4), #ffffff, rgba(255,255,255,0.4))"
@@ -121,8 +121,8 @@ export default function Curriculum() {
 
         <div className="curriculum-cta" style={{ marginTop: '30px', display: 'flex', justifyContent: 'center' }}>
           <a href={SKOOL_URL}>
-            <button className="btn-accent shiny-silver-border">
-              <span>Join</span>
+            <button className="btn-brutal">
+              JOIN
             </button>
           </a>
         </div>
