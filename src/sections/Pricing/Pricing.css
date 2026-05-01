@@ -161,6 +161,7 @@
   .pricing-grid {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 20px;
   }
   
   .pricing-features li {
@@ -175,14 +176,14 @@
 
 @media (max-width: 480px) {
   .pricing-card {
-    padding: 28px 22px;
+    padding: 20px 16px;
   }
 
   .pricing-card-price {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .pricing-card-name {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }

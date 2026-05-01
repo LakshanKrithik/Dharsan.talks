@@ -3,7 +3,7 @@ import GlassSurface from '../../components/ui/GlassSurface';
 import MagicRings from '../../components/ui/MagicRings';
 import GradientText from '../../components/GradientText/GradientText';
 import ShinyText from '../../components/ui/ShinyText';
-import dharsanImg from '../../assets/d2.png';
+import dharsanImg from '../../assets/d2-opt.webp';
 import './WhyChoose.css';
 
 const leftCards = [
