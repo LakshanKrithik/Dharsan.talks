@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import DotField from '../../components/ui/DotField';
 import './Curriculum.css';
 
 const SKOOL_URL = '#pricing';
@@ -68,6 +69,20 @@ const fadeUp = {
 export default function Curriculum() {
   return (
     <section className="curriculum" id="curriculum">
+      <div style={{ width: '100%', height: '100%', position: 'absolute', inset: 0, zIndex: 0 }}>
+        <DotField
+          dotRadius={1}
+          dotSpacing={5}
+          bulgeStrength={13}
+          glowRadius={50}
+          sparkle={false}
+          waveAmplitude={0}
+          cursorRadius={100}
+          cursorForce={0}
+          gradientFrom="#ffffff"
+          gradientTo="#94a3b8"
+        />
+      </div>
       <div className="curriculum-container">
         <motion.div
           className="curriculum-header"

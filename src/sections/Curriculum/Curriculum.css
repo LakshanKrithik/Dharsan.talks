@@ -3,9 +3,6 @@
   color: #ffffff;
   padding: 100px 24px;
   position: relative;
-  /* Dot Grid Background */
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
 }
 
 .curriculum-container {
