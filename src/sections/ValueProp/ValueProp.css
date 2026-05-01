@@ -107,11 +107,35 @@
 
 @media (max-width: 600px) {
   .value {
-    padding: 50px 16px;
+    padding: 40px 16px;
     min-height: unset;
   }
 
   .value-inner {
     gap: 24px;
+    text-align: left;
+  }
+
+  .value-text .section-subtext {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .step-row {
+    flex-direction: row; 
+    align-items: flex-start;
+    text-align: left;
+    gap: 12px;
+  }
+
+  .step-icon-wrap {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .step-row:not(:last-child)::after {
+    left: 20px;
+    top: 50px;
   }
 }

@@ -256,14 +256,18 @@ a {
 }
 
 @media (max-width: 480px) {
-  .section { padding: 56px 16px; }
+  html {
+    font-size: 13px;
+  }
+
+  .section { padding: 48px 16px; }
 
   .section-heading {
-    font-size: clamp(1.7rem, 7vw, 2.4rem);
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
   }
 
   .btn-accent {
-    padding: 13px 28px;
-    font-size: 0.88rem;
+    padding: 12px 24px;
+    font-size: 0.85rem;
   }
 }

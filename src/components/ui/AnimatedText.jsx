@@ -48,7 +48,7 @@ const AnimatedText = React.forwardRef(
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             textShadow: isHovered ? "0 0 8px rgba(255,255,255,0.3)" : "none",
-            fontSize: "clamp(2.5rem, 6vw, 6rem)"
+            fontSize: "clamp(1.8rem, 10vw, 5rem)"
           }}
           variants={textVariants}
           initial="initial"
