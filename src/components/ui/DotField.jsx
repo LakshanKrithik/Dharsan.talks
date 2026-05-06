@@ -23,6 +23,7 @@ const DotField = memo(({
   const svgRef = useRef(null);
   const glowRef = useRef(null);
   const dotsRef = useRef([]);
+  const isInViewRef = useRef(true);
   const mouseRef = useRef({ x: -9999, y: -9999, prevX: -9999, prevY: -9999, speed: 0 });
   const rafRef = useRef(null);
   const sizeRef = useRef({ w: 0, h: 0, offsetX: 0, offsetY: 0 });
@@ -37,8 +38,17 @@ const DotField = memo(({
     const canvas = canvasRef.current;
     const glowEl = glowRef.current;
     if (!canvas) return;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas.parentElement || canvas);
+
     const ctx = canvas.getContext('2d', { alpha: true });
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = 1; // Forced to 1 for better performance on large displays
     let resizeTimer;
 
     function resize() {
@@ -109,6 +119,9 @@ const DotField = memo(({
     let frameCount = 0;
 
     function tick() {
+      rafRef.current = requestAnimationFrame(tick);
+      if (!isInViewRef.current) return;
+
       frameCount++;
       const dots = dotsRef.current;
       const m = mouseRef.current;
@@ -201,8 +214,6 @@ const DotField = memo(({
       }
 
       ctx.fill();
-
-      rafRef.current = requestAnimationFrame(tick);
     }
 
     doResize();
@@ -219,6 +230,7 @@ const DotField = memo(({
       cancelAnimationFrame(rafRef.current);
       clearInterval(speedInterval);
       clearTimeout(resizeTimer);
+      observer.disconnect();
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', onMouseMove);
     };

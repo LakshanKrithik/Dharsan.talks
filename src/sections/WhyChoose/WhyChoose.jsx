@@ -3,7 +3,7 @@ import GlassSurface from '../../components/ui/GlassSurface';
 import MagicRings from '../../components/ui/MagicRings';
 import GradientText from '../../components/GradientText/GradientText';
 import ShinyText from '../../components/ui/ShinyText';
-import dharsanImg from '../../assets/d2-opt.webp';
+import d3mp4 from '../../assets/d3.mp4';
 import './WhyChoose.css';
 
 const leftCards = [
@@ -144,7 +144,7 @@ export default function WhyChoose() {
             ))}
           </div>
 
-          {/* Center Image */}
+          {/* Center Video */}
           <motion.div
             className="why-center-image"
             initial={{ opacity: 0, scale: 0.94 }}
@@ -152,7 +152,14 @@ export default function WhyChoose() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src={dharsanImg} alt="Dharsan" className="why-portrait" />
+            <video
+              src={d3mp4}
+              className="why-portrait"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </motion.div>
 
           {/* Right Cards */}

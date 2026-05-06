@@ -4,9 +4,18 @@ import * as THREE from "three";
 export function ShaderAnimation() {
   const containerRef = useRef(null);
   const sceneRef = useRef(null);
+  const isInViewRef = useRef(true);
 
   useEffect(() => {
     if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(containerRef.current);
 
     const container = containerRef.current;
 
@@ -79,7 +88,7 @@ export function ShaderAnimation() {
     scene.add(mesh);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Capped at 1.5 for performance
 
     container.appendChild(renderer.domElement);
 
@@ -99,6 +108,14 @@ export function ShaderAnimation() {
     // Animation loop
     const animate = () => {
       const animationId = requestAnimationFrame(animate);
+      
+      if (sceneRef.current) {
+        sceneRef.current.animationId = animationId;
+      }
+
+      // Skip heavy rendering if not in view
+      if (!isInViewRef.current) return;
+
       // Increased loop speed
       uniforms.time.value += 0.05 * 1.2;
       renderer.render(scene, camera);
@@ -123,6 +140,7 @@ export function ShaderAnimation() {
     // Cleanup function
     return () => {
       window.removeEventListener("resize", onWindowResize);
+      observer.disconnect();
 
       if (sceneRef.current) {
         cancelAnimationFrame(sceneRef.current.animationId);

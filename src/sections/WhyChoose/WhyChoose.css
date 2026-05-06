@@ -171,7 +171,7 @@
   font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
-/* ─── Center portrait — fills full column height ─────── */
+/* ─── Center portrait / video — fills full column height ─────── */
 .why-center-image {
   position: relative;
   display: flex;
@@ -187,6 +187,7 @@
   object-position: center top;
   filter: drop-shadow(0 0 100px rgba(99, 145, 245, 0.45));
   display: block;
+  border-radius: 16px;
 }
 
 /* ─── Responsive ─────────────────────────────────────── */

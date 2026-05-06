@@ -92,6 +92,7 @@ export default function MagicRings({
   const hoverAmountRef = useRef(0);
   const isHoveredRef = useRef(false);
   const burstRef = useRef(0);
+  const isInViewRef = useRef(true);
 
   propsRef.current = {
     color, colorTwo, speed, ringCount, attenuation, lineThickness,
@@ -103,6 +104,14 @@ export default function MagicRings({
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount) return;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(mount);
 
     let renderer;
     try {
@@ -181,6 +190,8 @@ export default function MagicRings({
     let frameId;
     const animate = (t) => {
       frameId = requestAnimationFrame(animate);
+      if (!isInViewRef.current) return;
+      
       const p = propsRef.current;
 
       smoothMouseRef.current[0] += (mouseRef.current[0] - smoothMouseRef.current[0]) * 0.08;
@@ -217,6 +228,7 @@ export default function MagicRings({
 
     return () => {
       cancelAnimationFrame(frameId);
+      observer.disconnect();
       window.removeEventListener('resize', resize);
       ro.disconnect();
       mount.removeEventListener('mousemove', onMouseMove);

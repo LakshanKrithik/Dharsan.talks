@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { ShaderAnimation } from '../../components/ui/ShaderAnimation';
 import { AnimatedText } from '../../components/ui/AnimatedText';
 import './Hero.css';
 
@@ -16,16 +15,6 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      {/* Shader background */}
-      <div className="hero-dither" style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-        <ShaderAnimation />
-        {/* Radial Gradient mask for seamless fade at the bottom to merge with ValueProp layout */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 70%, var(--bg-secondary) 100%)', pointerEvents: 'none', zIndex: 2 }} />
-      </div>
-
-      {/* Bottom fade overlay */}
-      <div className="hero-overlay" />
-
       {/* Content */}
       <motion.div
         className="hero-content"

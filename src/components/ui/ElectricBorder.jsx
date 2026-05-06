@@ -15,6 +15,7 @@ const ElectricBorder = ({
   const animationRef = useRef(null);
   const timeRef = useRef(0);
   const lastFrameTimeRef = useRef(0);
+  const isInViewRef = useRef(true);
 
   // Noise functions
   const random = useCallback(x => {
@@ -143,6 +144,14 @@ const ElectricBorder = ({
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(container);
 
     // Configuration
     const octaves = 10;
@@ -173,7 +182,8 @@ const ElectricBorder = ({
     let { width, height } = updateSize();
 
     const drawElectricBorder = currentTime => {
-      if (!canvas || !ctx) return;
+      animationRef.current = requestAnimationFrame(drawElectricBorder);
+      if (!canvas || !ctx || !isInViewRef.current) return;
 
       const deltaTime = (currentTime - lastFrameTimeRef.current) / 1000;
       timeRef.current += deltaTime * speed;
@@ -244,8 +254,6 @@ const ElectricBorder = ({
 
       ctx.closePath();
       ctx.stroke();
-
-      animationRef.current = requestAnimationFrame(drawElectricBorder);
     };
 
     // Handle resize
@@ -264,6 +272,7 @@ const ElectricBorder = ({
         cancelAnimationFrame(animationRef.current);
       }
       resizeObserver.disconnect();
+      observer.disconnect();
     };
   }, [color, speed, chaos, borderRadius, octavedNoise, getRoundedRectPoint]);
 
