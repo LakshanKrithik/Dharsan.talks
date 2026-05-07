@@ -22,6 +22,8 @@ export default function ValueProp() {
           amplitude={1.0}
           speed={1}
         />
+        {/* Bottom fade mask to merge into Curriculum's SpotlightBackground */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '150px', background: 'linear-gradient(to bottom, transparent, #050505)', pointerEvents: 'none' }} />
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { AnimatedText } from '../../components/ui/AnimatedText';
+import heroVideo from '../../assets/download2.mp4';
 import './Hero.css';
 
 const SKOOL_URL = '#pricing';
@@ -15,30 +16,55 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section className="hero" id="hero">
+      {/* Background Video B-Roll (Right Aligned & Blended) */}
+      <div className="hero-video-bg-container">
+        <div className="hero-video-bg-wrapper">
+          <video 
+            autoPlay 
+            muted 
+            playsInline
+            loop
+            className="hero-bg-video"
+            src={heroVideo}
+            onTimeUpdate={(e) => {
+              // Loop the best 10 second chunk of the clip
+              if (e.target.currentTime >= 10) {
+                e.target.currentTime = 0;
+                e.target.play();
+              }
+            }}
+          />
+          {/* Gradient Masks to blend the video smoothly into the dark background */}
+          <div className="hero-video-mask-right"></div>
+          <div className="hero-video-mask-bottom"></div>
+          <div className="hero-video-mask-overlay"></div>
+        </div>
+      </div>
+
+      {/* Eye-catching Background Glow */}
+      <div className="hero-bg-glow"></div>
+
       {/* Content */}
       <motion.div
         className="hero-content"
         initial="hidden"
         animate="visible"
       >
-        <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ textAlign: 'center', width: '100%', zIndex: 10 }}>
-            <AnimatedText
-              text={<>Speak with <span className="font-display" style={{ WebkitTextFillColor: '#3D6ED6', color: '#3D6ED6', fontStyle: 'italic', fontWeight: '400', padding: '0 12px' }}>Authority</span> <br/> and <span className="font-display" style={{ WebkitTextFillColor: '#3D6ED6', color: '#3D6ED6', fontStyle: 'italic', fontWeight: '400', padding: '0 12px' }}>Charisma</span> <br/> to Inspire and Stand Out</>}
-              hoverEffect={true}
-              gradientColors="linear-gradient(90deg, #ffffff, #b3b3b3, #ffffff, #e6e6e6, #ffffff)"
-              gradientAnimationDuration={3}
-              textClassName="hero-title"
-              style={{ lineHeight: '1.4' }}
-            />
+        <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <div style={{ textAlign: 'left', width: '100%', zIndex: 10 }}>
+            <h1 className="hero-title">
+              Speak with <span className="hero-title-accent">Authority</span> <br className="hide-on-mobile" /> 
+              and <span className="hero-title-accent">Charisma</span> <br className="hide-on-mobile" /> 
+              to Inspire and Stand Out
+            </h1>
           </div>
         </div>
 
-        <motion.p className="hero-subtitle" variants={fadeUp(0.28)} style={{ fontWeight: '600', fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', marginTop: '20px' }}>
+        <motion.p className="hero-subtitle" variants={fadeUp(0.28)}>
           Dedicate 6 weeks of Your Life to Master the Most Valuable Skill Ever!
         </motion.p>
 
-        <motion.div className="hero-cta-group" variants={fadeUp(0.4)} style={{ marginTop: '40px' }}>
+        <motion.div className="hero-cta-group" variants={fadeUp(0.4)}>
           <a href={SKOOL_URL}>
             <button className="btn-brutal" style={{ transform: 'scale(1.1)' }}>
               JOIN

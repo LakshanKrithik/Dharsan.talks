@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SpotlightBackground from '../../components/ui/SpotlightBackground';
 import './Curriculum.css';
 
 const SKOOL_URL = '#pricing';
@@ -67,8 +68,10 @@ const fadeUp = {
 
 export default function Curriculum() {
   return (
-    <section className="curriculum" id="curriculum">
-      <div className="curriculum-container">
+    <section id="curriculum">
+      <SpotlightBackground>
+        <div className="curriculum" style={{ background: 'transparent' }}>
+          <div className="curriculum-container">
         <motion.div
           className="curriculum-header"
           initial="hidden"
@@ -117,7 +120,9 @@ export default function Curriculum() {
             </button>
           </a>
         </motion.div>
-      </div>
+          </div>
+        </div>
+      </SpotlightBackground>
     </section>
   );
 }
