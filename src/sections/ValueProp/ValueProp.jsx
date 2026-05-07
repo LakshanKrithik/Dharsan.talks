@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Aurora from '../../components/ui/Aurora';
 import BubbleText from '../../components/ui/BubbleText';
-import dharsanImage from '../../assets/d1-opt.webp'; // load graphic
+import dharsanImage from '../../assets/ted d.png'; // load graphic
 import './ValueProp.css';
 
 const SKOOL_URL = '#pricing';
@@ -39,7 +39,7 @@ export default function ValueProp() {
             <div style={{ marginBottom: '40px', width: '100%' }}>
               <BubbleText text="Teaching my 2 years of Condensed Knowledge & Real World Practices that Helps You Reach Your Untapped Speaking Potential" />
             </div>
-            <p className="font-bebas" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: '700', letterSpacing: '0.05em', color: 'var(--text-primary)', textTransform: 'uppercase', lineHeight: '1.2' }}>
+            <p className="font-bebas" style={{ fontSize: 'clamp(1.2rem, 5vw, 2.2rem)', fontWeight: '700', letterSpacing: '0.05em', color: 'var(--text-primary)', textTransform: 'uppercase', lineHeight: '1.2' }}>
               Learn. Practice. Improve Effortlessly
             </p>
           </motion.div>

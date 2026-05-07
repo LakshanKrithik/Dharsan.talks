@@ -174,3 +174,27 @@
     padding: 1.5rem 1.2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .curriculum {
+    padding: 40px 16px;
+  }
+  .curriculum-main-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .curriculum-card {
+    padding: 1.25rem 1rem;
+    border-radius: 16px;
+  }
+  .curriculum-number {
+    font-size: 3.5rem;
+  }
+  .curriculum-card-title {
+    font-size: 1.25rem;
+  }
+  .curriculum-card li {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+}
