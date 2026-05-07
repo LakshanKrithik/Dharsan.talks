@@ -23,6 +23,11 @@
   gap: 0;
 }
 
+.value-author-image {
+  width: 100%;
+  max-width: 420px;
+}
+
 .step-row {
   display: flex;
   align-items: flex-start;
@@ -137,5 +142,10 @@
   .step-row:not(:last-child)::after {
     left: 20px;
     top: 50px;
+  }
+
+  .value-author-image {
+    max-width: 280px;
+    margin: 0 auto;
   }
 }

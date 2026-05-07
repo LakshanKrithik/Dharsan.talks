@@ -52,7 +52,7 @@ export default function ValueProp() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
           >
-            <div style={{ position: 'relative', width: '100%', maxWidth: '420px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--accent-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
+            <div className="value-author-image" style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--accent-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
               <img src={dharsanImage} alt="Dharsan P" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8,8,8,0.9), transparent 60%)', pointerEvents: 'none' }} />
             </div>
