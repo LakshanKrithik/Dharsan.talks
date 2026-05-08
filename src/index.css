@@ -45,6 +45,11 @@ body {
   -moz-osx-osx-font-smoothing: grayscale;
 }
 
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 img, video {
   max-width: 100%;
   display: block;

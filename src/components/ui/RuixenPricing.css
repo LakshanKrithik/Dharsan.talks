@@ -213,3 +213,27 @@
   margin-top: 12px;
   height: 20px;
 }
+
+@media (max-width: 480px) {
+  .ruixen-subtitle {
+    font-size: 1.05rem;
+  }
+  .ruixen-card-top {
+    padding: 24px 20px 12px;
+  }
+  .ruixen-card-middle {
+    padding: 0 20px;
+  }
+  .ruixen-card-bottom {
+    padding: 12px 20px 24px;
+  }
+  .ruixen-title {
+    font-size: 2rem;
+  }
+  .ruixen-card-price {
+    font-size: 2.4rem;
+  }
+  .ruixen-feature {
+    font-size: 0.95rem;
+  }
+}

@@ -39,7 +39,7 @@ export default function Pricing() {
   const inView = useInView(ref, { once: true, margin: '-60px' });
 
   return (
-    <section className="section pricing" id="pricing" style={{ padding: '80px 0 120px', position: 'relative' }}>
+    <section className="section pricing" id="pricing" style={{ paddingTop: '80px', paddingBottom: '120px', position: 'relative' }}>
       <div className="container" ref={ref} style={{ position: 'relative', zIndex: 1 }}>
          <motion.div
             initial={{ opacity: 0, y: 40 }}
