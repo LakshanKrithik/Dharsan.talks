@@ -244,7 +244,7 @@ a {
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .section { padding: 70px 20px; }
+  .section { padding: 70px 32px; }
 
   .section-heading {
     font-size: clamp(2rem, 6vw, 3rem);
@@ -265,7 +265,7 @@ a {
     font-size: 13px;
   }
 
-  .section { padding: 48px 16px; }
+  .section { padding: 48px 24px; }
 
   .section-heading {
     font-size: clamp(1.7rem, 7vw, 2.2rem);

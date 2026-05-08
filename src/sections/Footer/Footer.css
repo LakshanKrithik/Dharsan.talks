@@ -150,22 +150,32 @@
 
   .massive-header-wrapper {
     gap: 20px;
-    padding: 15px 5% 0;
+    padding: 15px 6% 0;
     box-sizing: border-box;
     width: 100%;
   }
 
   .footer-focus-container {
-    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    font-size: clamp(2rem, 10vw, 2.5rem);
     justify-content: center;
     width: 100%;
     transform: none;
   }
 
   .footer-right-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
     width: 100%;
     box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  .footer-nav-col {
+    text-align: left;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .footer-nav-col a {
@@ -173,8 +183,13 @@
     letter-spacing: 0.1em;
   }
 
+  .footer-socials {
+    flex-direction: row;
+    gap: 20px;
+  }
+
   .footer-socials a {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .footer-bottom {

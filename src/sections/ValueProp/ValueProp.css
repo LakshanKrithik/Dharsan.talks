@@ -112,7 +112,7 @@
 
 @media (max-width: 600px) {
   .value {
-    padding: 40px 16px;
+    padding: 40px 24px;
     min-height: unset;
   }
 
