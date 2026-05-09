@@ -183,24 +183,27 @@
 
 @media (max-width: 480px) {
   .curriculum {
-    padding: 40px 24px;
+    padding: 24px 16px;
   }
   .curriculum-main-title {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   .curriculum-card {
-    padding: 1.25rem 1rem;
-    border-radius: 16px;
+    padding: 1rem 1rem;
+    border-radius: 12px;
   }
   .curriculum-number {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
   .curriculum-card-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
   .curriculum-card li {
-    font-size: 0.95rem;
-    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .curriculum-bottom-btn-container {
+    margin-top: 2rem;
   }
 }

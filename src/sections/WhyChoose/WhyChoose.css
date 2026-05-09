@@ -185,7 +185,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: drop-shadow(0 0 100px rgba(99, 145, 245, 0.45));
+  box-shadow: 0 0 60px rgba(99, 145, 245, 0.25);
   display: block;
   border-radius: 16px;
 }
