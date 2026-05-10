@@ -21,11 +21,9 @@ function App() {
         
         <div style={{ position: 'relative' }}>
           {/* Shared background for Pricing and FAQ to blend animations together */}
-          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
-            <div style={{ position: 'sticky', top: 0, height: '100vh', width: '100%', overflow: 'hidden', opacity: 0.8 }}>
-              <FloatingPaths position={1} />
-              <FloatingPaths position={-1} />
-            </div>
+          <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0, overflow: 'hidden', opacity: 0.8 }}>
+            <FloatingPaths position={1} />
+            <FloatingPaths position={-1} />
           </div>
           
           <div style={{ position: 'relative', zIndex: 1 }}>
