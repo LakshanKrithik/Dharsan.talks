@@ -3,9 +3,24 @@
   overflow: hidden;
   overflow-x: hidden;
   background-color: #050505;
-  padding: 30px 0 0 0;
+  padding: 20px 0 0 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(61, 110, 214, 0.015),
+    rgba(61, 110, 214, 0.015) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  z-index: 0;
+  pointer-events: none;
 }
 
 .massive-header-wrapper {
@@ -98,7 +113,7 @@
   position: relative;
   z-index: 1;
   padding: 16px 0;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   color: rgba(255, 255, 255, 0.3);
   font-size: 0.9rem;
@@ -110,8 +125,8 @@
   .massive-header-wrapper {
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
-    padding: 30px 6% 0;
+    gap: 20px;
+    padding: 10px 6% 0;
     align-items: center;
   }
   
@@ -124,13 +139,13 @@
 
   .footer-right-content {
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     align-items: center;
   }
 
   .footer-nav-col {
     text-align: center;
-    gap: 16px;
+    gap: 12px;
   }
   
   .footer-nav-col a:hover {
@@ -156,7 +171,7 @@
   }
 
   .footer-focus-container {
-    font-size: clamp(2rem, 10vw, 2.5rem);
+    font-size: clamp(1.5rem, 8vw, 2rem);
     justify-content: center;
     width: 100%;
     transform: none;
