@@ -267,14 +267,16 @@ a {
     font-size: 13px;
   }
 
-  .section { padding: 48px 24px; }
+  .section { padding: 40px 16px; }
 
   .section-heading {
-    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
 
   .btn-accent {
     padding: 12px 24px;
     font-size: 0.85rem;
+    width: 100%;
+    justify-content: center;
   }
 }
