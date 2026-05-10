@@ -207,7 +207,7 @@
 @media (max-width: 768px) {
   .why-container {
     min-height: unset;
-    padding: 64px 20px 0;
+    padding: 64px 20px 64px;
   }
 
   .why-grid {
@@ -220,7 +220,6 @@
     width: 75%;
     max-width: 340px;
     margin: 0 auto;
-    order: -1;
     height: 500px;
   }
 
@@ -230,7 +229,7 @@
   }
 
   .why-col {
-    padding: 0 8px 48px;
+    padding: 0 8px;
     align-items: center !important;
   }
 
@@ -245,7 +244,7 @@
 
 @media (max-width: 480px) {
   .why-container {
-    padding: 48px 24px 0;
+    padding: 48px 24px 48px;
   }
 
   .why-center-image {
