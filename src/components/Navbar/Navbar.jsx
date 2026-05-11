@@ -48,8 +48,8 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <button className="btn-brutal" onClick={() => handleScroll('#pricing')}>
-            JOIN
+          <button className="navbar-cta-btn" onClick={() => handleScroll('#pricing')}>
+            Join Now
           </button>
 
           <div className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
@@ -81,8 +81,8 @@ export default function Navbar() {
                 {l.label}
               </motion.a>
             ))}
-            <button className="btn-brutal" style={{ marginTop: '16px' }} onClick={() => { handleScroll('#pricing'); setMenuOpen(false); }}>
-              JOIN
+            <button className="navbar-cta-btn" style={{ marginTop: '16px' }} onClick={() => { handleScroll('#pricing'); setMenuOpen(false); }}>
+              Join Now
             </button>
           </motion.div>
         )}

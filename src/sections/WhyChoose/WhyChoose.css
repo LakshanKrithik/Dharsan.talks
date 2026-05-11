@@ -207,7 +207,8 @@
 @media (max-width: 768px) {
   .why-bg {
     height: 600px;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     bottom: auto;
     opacity: 0.3;
   }
@@ -233,7 +234,6 @@
   .why-portrait {
     object-fit: contain;
     object-position: center bottom;
-    background-color: #080808;
   }
 
   .why-col {
