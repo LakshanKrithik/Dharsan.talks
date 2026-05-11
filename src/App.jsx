@@ -11,7 +11,6 @@ import { FloatingPaths } from './components/ui/BackgroundPaths';
 function App() {
   return (
     <>
-      <div className="noise-overlay" />
       <Navbar />
       <main>
         <Hero />

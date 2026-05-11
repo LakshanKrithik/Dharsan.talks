@@ -1,7 +1,20 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export const FloatingPaths = ({ position }) => {
-    const paths = Array.from({ length: 36 }, (_, i) => ({
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Render all 36 paths on desktop, but fewer on mobile to prevent overcrowding
+    const pathCount = isMobile ? 12 : 36;
+    
+    const paths = Array.from({ length: pathCount }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
             380 - i * 5 * position
@@ -30,17 +43,8 @@ export const FloatingPaths = ({ position }) => {
                         strokeWidth={path.width}
                         // Tuned opacity way down mapping against our dark background natively 
                         strokeOpacity={0.02 + path.id * 0.015}
-                        initial={{ pathLength: 0.3, opacity: 0.2 }}
-                        animate={{
-                            pathLength: 1,
-                            opacity: [0.05, 0.25, 0.05],
-                            pathOffset: [0, 1, 0],
-                        }}
-                        transition={{
-                            duration: 20 + Math.random() * 10,
-                            repeat: Number.POSITIVE_INFINITY,
-                            ease: "linear",
-                        }}
+                        initial={{ pathLength: 1, opacity: 0.1 }}
+                        /* Removed animations to keep paths fully static for performance */
                     />
                 ))}
             </svg>
