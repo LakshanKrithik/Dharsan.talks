@@ -7,7 +7,7 @@
   cursor: default;
   line-height: 1.25;
   display: flex;
-  flex-wrap: ;
+  flex-wrap: wrap;
   gap: 0;
 }
 
