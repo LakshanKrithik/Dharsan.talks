@@ -29,7 +29,7 @@ const AnimatedText = React.forwardRef(
         transition: {
           duration: gradientAnimationDuration,
           repeat: Infinity,
-          ease: "linar",
+          ease: "linear",
         },
       },
     };
