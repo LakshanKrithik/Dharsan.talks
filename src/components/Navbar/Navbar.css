@@ -11,7 +11,7 @@
   background: transparent;
   border-bottom: 1px solid transparent;
   transition:
-    background 0.4s cubic-bezier(0.4, 0, 0, 1),
+    background 0.4s cubic-bezier(0.4, 0.2, 0, 1),
     border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
