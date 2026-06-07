@@ -53,15 +53,14 @@ export default function Hero() {
         <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
           <div style={{ textAlign: 'left', width: '100%', zIndex: 10 }}>
             <h1 className="hero-title">
-              Speak with <span className="hero-title-accent">Authority</span> <br className="hide-on-mobile" /> 
-              and <span className="hero-title-accent">Charisma</span> <br className="hide-on-mobile" /> 
-              to Inspire and Stand Out
+              The Complete Communication School to <br className="hide-on-mobile" /> 
+              <span className="hero-title-accent">Speak With Confidence & Fluency</span>
             </h1>
           </div>
         </div>
 
         <motion.p className="hero-subtitle" variants={fadeUp(0.28)}>
-          Dedicate 6 weeks of Your Life to Master the Most Valuable Skill Ever!
+          Dedicate just 12 weeks of your life to master the most valuable skill ever
         </motion.p>
 
         <motion.div className="hero-cta-group" variants={fadeUp(0.4)}>
