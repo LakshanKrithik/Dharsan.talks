@@ -54,7 +54,7 @@ export default function Hero() {
           <div style={{ textAlign: 'left', width: '100%', zIndex: 10 }}>
             <h1 className="hero-title">
               The Complete Communication School to <br className="hide-on-mobile" /> 
-              <span className="hero-title-accent">Speak With Confidence & Fluency</span>
+              Speak With <span className="hero-title-accent">Confidence</span> and <span className="hero-title-accent">Fluency</span>
             </h1>
           </div>
         </div>
