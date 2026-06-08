@@ -43,6 +43,11 @@ export default function FAQ() {
 
   return (
     <section className="section faq" id="faq" style={{ position: 'relative' }}>
+      {/* Premium Static Background */}
+      <div className="faq-bg-container">
+        <div className="faq-waves" />
+      </div>
+
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <motion.div
           className="faq-header"

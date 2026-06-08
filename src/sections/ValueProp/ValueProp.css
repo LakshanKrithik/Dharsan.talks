@@ -86,65 +86,65 @@
 @media (max-width: 900px) {
   .value-inner {
     grid-template-columns: 1fr;
-    gap: 48px;
-    text-align: center;
+    gap: 56px;
   }
   
+  .value-text {
+    text-align: center;
+  }
+
   .value-text .section-subtext {
     margin-left: auto;
     margin-right: auto;
   }
 
   .step-row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
   }
 
   .step-row:not(:last-child)::after {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 60px;
-    height: calc(100% - 30px);
+    left: 27px;
+    transform: none;
+    top: 72px;
+    height: calc(100% - 44px);
   }
 }
 
 @media (max-width: 600px) {
   .value {
-    padding: 40px 16px;
+    padding: 60px 24px;
     min-height: unset;
   }
 
   .value-inner {
-    gap: 32px;
-    text-align: center;
-  }
-
-  .value-text .section-subtext {
-    margin-left: auto;
-    margin-right: auto;
+    gap: 48px;
   }
 
   .step-row {
-    flex-direction: column; 
-    align-items: center;
-    text-align: center;
+    flex-direction: row; 
+    align-items: flex-start;
+    text-align: left;
     gap: 16px;
   }
 
   .step-icon-wrap {
-    width: 48px;
-    height: 48px;
-    font-size: 1.2rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
   }
 
   .step-row:not(:last-child)::after {
-    display: none;
+    display: block;
+    left: 22px;
+    top: 60px;
+    height: calc(100% - 32px);
   }
 
   .value-author-image {
-    max-width: 280px;
+    max-width: 320px;
     margin: 0 auto;
   }
 }

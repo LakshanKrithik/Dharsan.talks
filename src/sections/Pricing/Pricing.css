@@ -188,18 +188,49 @@
 
 @media (max-width: 480px) {
   .pricing-card {
-    padding: 16px 16px;
+    padding: 32px 24px;
   }
 
   .pricing-card-price {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
 
   .pricing-card-name {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .pricing-features li {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+    text-align: left;
   }
+}
+
+/* ── Pricing Background ── */
+.pricing-bg-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pricing-glow-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120vw;
+  height: 120vh;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, rgba(61, 110, 214, 0.25) 0%, rgba(34, 78, 163, 0.15) 40%, transparent 70%);
+}
+
+.pricing-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black 10%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 10%, transparent 80%);
 }

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import GlassSurface from '../../components/ui/GlassSurface';
-import MagicRings from '../../components/ui/MagicRings';
+
 import GradientText from '../../components/GradientText/GradientText';
 import ShinyText from '../../components/ui/ShinyText';
 import d3mp4 from '../../assets/d3.mp4';
@@ -39,31 +39,9 @@ const cardVariants = {
 export default function WhyChoose() {
   return (
     <section className="section why" id="why">
-      {/* MagicRings background */}
-      <div className="why-bg">
-        <MagicRings
-          color="#4427c4"
-          colorTwo="#2226df"
-          ringCount={6}
-          speed={1}
-          attenuation={10}
-          lineThickness={2}
-          baseRadius={0.35}
-          radiusStep={0.1}
-          scaleRate={0.1}
-          opacity={1}
-          blur={0}
-          noiseAmount={0.1}
-          rotation={0}
-          ringGap={1.5}
-          fadeIn={0.7}
-          fadeOut={0.5}
-          followMouse={false}
-          mouseInfluence={0.2}
-          hoverScale={1.2}
-          parallax={0.05}
-          clickBurst={false}
-        />
+      {/* Static Waves Background */}
+      <div className="why-bg-container">
+        <div className="why-waves" />
       </div>
 
       <div className="container why-container">

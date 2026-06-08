@@ -183,28 +183,28 @@
 
 @media (max-width: 480px) {
   .curriculum {
-    padding: 40px 16px;
+    padding: 60px 20px;
   }
   .curriculum-bento-grid {
     gap: 16px;
   }
   .curriculum-main-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
   .curriculum-card {
-    padding: 1.25rem 1rem;
+    padding: 1.75rem 1.25rem;
     border-radius: 16px;
   }
   .curriculum-number {
     font-size: 2.5rem;
   }
   .curriculum-card-title {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
   .curriculum-card li {
-    font-size: 0.85rem;
-    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
   }
   .curriculum-bottom-btn-container {
     margin-top: 2rem;

@@ -41,6 +41,12 @@ export default function Pricing() {
 
   return (
     <section className="section pricing" id="pricing" style={{ paddingTop: '80px', paddingBottom: '120px', position: 'relative' }}>
+      {/* Premium Static Background */}
+      <div className="pricing-bg-container">
+        <div className="pricing-glow-core" />
+        <div className="pricing-grid-overlay" />
+      </div>
+
       <div className="container" ref={ref} style={{ position: 'relative', zIndex: 1 }}>
          <motion.div
             initial={{ opacity: 0, y: 40 }}

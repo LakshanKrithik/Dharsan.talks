@@ -195,7 +195,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 100px 16px 60px;
+    padding: 120px 20px 80px;
   }
 
   .hero-title {
@@ -204,11 +204,19 @@
   }
   
   .hero-content {
-    padding: 0 8px;
+    padding: 0 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
   }
 
   .hero-cta-group {
     width: 100%;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .hero-cta-group a, .hero-cta-group button {
@@ -216,16 +224,16 @@
   }
 
   .hero-video-wrapper {
-    width: 28vw;
-    min-width: 80px;
+    width: 35vw;
+    min-width: 100px;
   }
 
   .video-left {
-    left: -4vw;
+    left: -2vw;
   }
 
   .video-right {
-    right: -4vw;
+    right: -2vw;
   }
   
   .hero-video {

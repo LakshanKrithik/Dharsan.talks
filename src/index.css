@@ -246,7 +246,11 @@ a {
 
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .section { padding: 70px 32px; }
+  html {
+    font-size: 15px;
+  }
+
+  .section { padding: 80px 24px; }
 
   .section-heading {
     font-size: clamp(2rem, 6vw, 3rem);
@@ -264,18 +268,18 @@ a {
 
 @media (max-width: 480px) {
   html {
-    font-size: 13px;
+    font-size: 14px;
   }
 
-  .section { padding: 40px 16px; }
+  .section { padding: 60px 20px; }
 
   .section-heading {
     font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
 
   .btn-accent {
-    padding: 12px 24px;
-    font-size: 0.85rem;
+    padding: 14px 24px;
+    font-size: 0.95rem;
     width: 100%;
     justify-content: center;
   }
