@@ -25,8 +25,8 @@ const faqs = [
     a: 'Results depend on implementation, but the system is designed to absolutely work if followed consistently.',
   },
   {
-    q: 'What happens after the 6 weeks?',
-    a: 'The 6-week program is designed to help you understand and internalize the system with focused, efficient practice. Beyond that, minimal continued practice is essential to refine your skills and strengthen your weaker areas until you achieve true mastery.',
+    q: 'What happens after the 12 weeks?',
+    a: 'In just 12 weeks, you\'ll internalize the system and speak with greater confidence, clarity, and fluency.',
   },
   {
     q: 'Is there lifetime access?',

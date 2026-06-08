@@ -10,10 +10,7 @@ export default function RuixenPricing({ plans, contactHref }) {
             <div className="ruixen-header-flex">
 
                 
-                <h2 className="ruixen-title" style={{ fontSize: '2.5rem' }}>Comprehensive Communication School</h2>
-                <p className="ruixen-subtitle" style={{ marginBottom: "20px" }}>
-                    Designed for individuals, creators, and founders to systematically elevate their communication skills with accelerated growth.
-                </p>
+                <h2 className="ruixen-title" style={{ fontSize: '2.5rem', marginBottom: '40px' }}>Comprehensive Communication School</h2>
             </div>
 
             <div className="ruixen-grid">
@@ -36,20 +33,22 @@ const PlanCard = ({ plan, contactHref }) => {
 
             <div className="ruixen-card-top">
                 <h2 className="ruixen-card-title">{plan.title}</h2>
-                <h3 className="ruixen-card-price" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <NumberFlow
-                        value={plan.monthlyPrice}
-                        format={{
-                            currency: "INR",
-                            style: "currency",
-                            currencySign: "standard",
-                            minimumFractionDigits: 0,
-                            maximumFractionDigits: 0,
-                            currencyDisplay: "narrowSymbol"
-                        }}
-                    />
+                <h3 className="ruixen-card-price" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    <span className={plan.originalPrice ? "ruixen-highlighted-price" : ""}>
+                        <NumberFlow
+                            value={plan.monthlyPrice}
+                            format={{
+                                currency: "INR",
+                                style: "currency",
+                                currencySign: "standard",
+                                minimumFractionDigits: 0,
+                                maximumFractionDigits: 0,
+                                currencyDisplay: "narrowSymbol"
+                            }}
+                        />
+                    </span>
                     {plan.originalPrice && (
-                        <span style={{ fontSize: '0.6em', textDecoration: 'line-through', color: '#888', fontWeight: '400' }}>
+                        <span className="ruixen-original-price">
                             ₹{plan.originalPrice}
                         </span>
                     )}

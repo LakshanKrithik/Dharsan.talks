@@ -136,7 +136,7 @@
 
 .ruixen-card-title {
   font-size: 1.55rem;
-  font-weight: 600;
+  font-weight: 800;
   color: #fff;
   margin: 0;
 }
@@ -150,9 +150,36 @@
   align-items: baseline;
 }
 
+.ruixen-highlighted-price {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+.ruixen-original-price {
+  font-size: 0.75em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  display: inline-block;
+}
+
+.ruixen-original-price::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 110%;
+  height: 4px;
+  background-color: #3b82f6;
+  transform: translateY(-50%) rotate(-10deg);
+  border-radius: 2px;
+}
+
 .ruixen-card-desc {
   font-size: 1.05rem;
-  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
   margin-top: 1rem;
   line-height: 1.6;
 }
@@ -199,7 +226,7 @@
 }
 
 .ruixen-includes {
-  font-weight: 600;
+  font-weight: 800;
   color: #fff;
   margin-bottom: 8px;
 }
@@ -208,7 +235,8 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: rgba(255,255,255,0.85);
+  color: #fff;
+  font-weight: 600;
   font-size: 1.05rem;
   line-height: 1.5;
 }
