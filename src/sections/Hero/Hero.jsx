@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { AnimatedText } from '../../components/ui/AnimatedText';
-import heroVideo from '../../assets/download2.mp4';
 import './Hero.css';
 
 const SKOOL_URL = '#pricing';
@@ -16,30 +15,6 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      {/* Background Video B-Roll (Right Aligned & Blended) */}
-      <div className="hero-video-bg-container">
-        <div className="hero-video-bg-wrapper">
-          <video 
-            autoPlay 
-            muted 
-            playsInline
-            loop
-            className="hero-bg-video"
-            src={heroVideo}
-            onTimeUpdate={(e) => {
-              // Loop the best 10 second chunk of the clip
-              if (e.target.currentTime >= 10) {
-                e.target.currentTime = 0;
-                e.target.play();
-              }
-            }}
-          />
-          {/* Gradient Masks to blend the video smoothly into the dark background */}
-          <div className="hero-video-mask-right"></div>
-          <div className="hero-video-mask-bottom"></div>
-          <div className="hero-video-mask-overlay"></div>
-        </div>
-      </div>
 
       {/* Eye-catching Background Glow */}
       <div className="hero-bg-glow"></div>

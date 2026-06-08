@@ -9,7 +9,8 @@ const plans = [
   {
     id: 'standard',
     title: 'All Round',
-    monthlyPrice: 5999,
+    monthlyPrice: 2999,
+    originalPrice: 8000,
     annuallyPrice: 59990,
     desc: 'Designed for individuals at every level from beginners to early advanced speakers, to systematically master and elevate their communication skills.',
     features: [

@@ -9,54 +9,54 @@ const sessions = [
     num: '1',
     title: 'Foundation Mastery',
     modules: [
-      'Improving Speech & Thought Clarity',
-      'Integrating Pauses to Become a Powerful Speaker',
-      'Controlling Pace to Control Speech Delivery',
+      'Improving Thought Clarity',
+      'Improving Speech Clarity',
+      'Strengthening Mind To Mouth Connection',
     ]
   },
   {
     num: '2',
-    title: 'Pitch & Emotion',
+    title: 'Dynamic Speech Delivery',
     modules: [
-      'Understanding Pitch to Convey Emotions',
-      'Using Emphasis to make your Speech Irresistible',
-      'How to record and review your footages',
+      'Controlling Pace For Dynamic Speech Delivery',
+      'Understanding Pitch To Convey Emotions',
+      'Integrating pause + emphasis to make your speech irresistible',
     ]
   },
   {
     num: '3',
-    title: 'Dynamic Vocabulary',
+    title: 'Vocabulary Mastery',
     modules: [
-      'Developing A Dynamic Vocabulary Arsenal using AI',
-      'Developing your Unique Surface Lexicon using AI',
-      'Speaking with Body Language and Facial Expressions',
+      'How To Record & Review To Become A Unique Speaker',
+      'Developing A Dynamic Vocabulary Arsenal Using AI',
+      'Developing Your Unique Surface Lexicon Using AI',
     ]
   },
   {
     num: '4',
-    title: 'Structure & Accent',
+    title: 'Nonverbal Communication',
     modules: [
-      'Speaking with Structure',
-      'Strengthening your Mind-to-mouth connection',
-      'Improving Your Thick Indian Accent',
+      'Amplyfing Your Speech With Body Language',
+      'Using Facial Expressions',
+      'Speaking with Conviction',
     ]
   },
   {
     num: '5',
-    title: 'Personality & Charisma',
+    title: 'Accent & Mirroring',
     modules: [
-      'Building on Your Personality to Make You Stand Out',
-      'Speaking with Competence to Make People Respect You',
-      'Speaking with Charisma to Make People Like You',
+      'Improving Your Thick Indian Accent',
+      'Mirroring Speech and Personality Attributes from the Best',
     ]
   },
   {
     num: '6',
-    title: 'Confidence & Banter',
+    title: 'Mastering Social Interactions',
     modules: [
-      'Speaking with Confidence and Handling Anxiety',
-      'How to Become an Interesting Story Teller',
-      'Mastering Witty Banter to Become Socially Likable',
+      'Speaking With Charisma & Wit To Become Socially Likable',
+      'Speaking With Authority & To Command Respect',
+      'Speaking With Conviction To Move & Persuade People',
+      'How To Become An Interesting Storyteller',
     ]
   },
 ];

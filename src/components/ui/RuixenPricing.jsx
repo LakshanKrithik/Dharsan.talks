@@ -10,7 +10,7 @@ export default function RuixenPricing({ plans, contactHref }) {
             <div className="ruixen-header-flex">
 
                 
-                <h2 className="ruixen-title">Pricing</h2>
+                <h2 className="ruixen-title" style={{ fontSize: '2.5rem' }}>Comprehensive Communication School</h2>
                 <p className="ruixen-subtitle" style={{ marginBottom: "20px" }}>
                     Designed for individuals, creators, and founders to systematically elevate their communication skills with accelerated growth.
                 </p>
@@ -36,7 +36,7 @@ const PlanCard = ({ plan, contactHref }) => {
 
             <div className="ruixen-card-top">
                 <h2 className="ruixen-card-title">{plan.title}</h2>
-                <h3 className="ruixen-card-price">
+                <h3 className="ruixen-card-price" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <NumberFlow
                         value={plan.monthlyPrice}
                         format={{
@@ -48,6 +48,11 @@ const PlanCard = ({ plan, contactHref }) => {
                             currencyDisplay: "narrowSymbol"
                         }}
                     />
+                    {plan.originalPrice && (
+                        <span style={{ fontSize: '0.6em', textDecoration: 'line-through', color: '#888', fontWeight: '400' }}>
+                            ₹{plan.originalPrice}
+                        </span>
+                    )}
                 </h3>
                 <p className="ruixen-card-desc">{plan.desc}</p>
             </div>
