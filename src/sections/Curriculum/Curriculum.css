@@ -5,7 +5,7 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .curriculum-container {
@@ -167,8 +167,10 @@
 
 @media (max-width: 768px) {
   .curriculum-bento-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12vh;
+    padding-bottom: 10vh;
   }
   .curriculum {
     padding: 70px 20px;
@@ -177,7 +179,12 @@
     font-size: 2.2rem;
   }
   .curriculum-card {
+    position: sticky;
+    top: calc(100px + (var(--card-index) * 12px));
+    box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.5rem 1.2rem;
+    transform-origin: top center;
   }
 }
 
@@ -186,7 +193,7 @@
     padding: 60px 20px;
   }
   .curriculum-bento-grid {
-    gap: 16px;
+    gap: 12vh;
   }
   .curriculum-main-title {
     font-size: 1.8rem;

@@ -93,6 +93,7 @@ export default function Curriculum() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.2, 0, 0, 1] }}
+              style={{ '--card-index': index }}
             >
               <div className="curriculum-card-header">
                 <span className="curriculum-number">{session.num}</span>
