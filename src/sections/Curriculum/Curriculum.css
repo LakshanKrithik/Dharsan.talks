@@ -180,7 +180,8 @@
   }
   .curriculum-card {
     position: sticky;
-    top: calc(100px + (var(--card-index) * 12px));
+    top: 100px;
+    min-height: 60vh;
     box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.7);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.5rem 1.2rem;
