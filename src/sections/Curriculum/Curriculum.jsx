@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import SpotlightBackground from '../../components/ui/SpotlightBackground';
 import './Curriculum.css';
 
 const SKOOL_URL = '#pricing';
@@ -69,61 +68,59 @@ const fadeUp = {
 export default function Curriculum() {
   return (
     <section id="curriculum">
-      <SpotlightBackground>
-        <div className="curriculum" style={{ background: 'transparent' }}>
-          <div className="curriculum-container">
-        <motion.div
-          className="curriculum-header"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={fadeUp}
-        >
-          <h1 className="curriculum-main-title">
-            This curriculum is designed to help you handle any conversation <span className="cursive-text">confidently</span>
-          </h1>
-        </motion.div>
+      <div className="curriculum">
+        <div className="curriculum-container">
+          <motion.div
+            className="curriculum-header"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={fadeUp}
+          >
+            <h1 className="curriculum-main-title">
+              This curriculum is designed to help you handle any conversation <span className="cursive-text">confidently</span>
+            </h1>
+          </motion.div>
 
-        <div className="curriculum-bento-grid">
-          {sessions.map((session, index) => (
-            <motion.div
-              key={session.num}
-              className="curriculum-card"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.2, 0, 0, 1] }}
-              style={{ '--card-index': index }}
-            >
-              <div className="curriculum-card-header">
-                <span className="curriculum-number">{session.num}</span>
-                <h2 className="curriculum-card-title">{session.title}</h2>
-              </div>
-              <ul>
-                {session.modules.map((module, mIdx) => (
-                  <li key={mIdx}>{module}</li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div 
-          className="curriculum-bottom-btn-container"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-        >
-          <a href={SKOOL_URL}>
-            <button className="curriculum-accent-btn">
-              Join Now
-            </button>
-          </a>
-        </motion.div>
+          <div className="curriculum-bento-grid">
+            {sessions.map((session, index) => (
+              <motion.div
+                key={session.num}
+                className="curriculum-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.2, 0, 0, 1] }}
+                style={{ '--card-index': index }}
+              >
+                <div className="curriculum-card-header">
+                  <span className="curriculum-number">{session.num}</span>
+                  <h2 className="curriculum-card-title">{session.title}</h2>
+                </div>
+                <ul>
+                  {session.modules.map((module, mIdx) => (
+                    <li key={mIdx}>{module}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div 
+            className="curriculum-bottom-btn-container"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            <a href={SKOOL_URL}>
+              <button className="curriculum-accent-btn">
+                Join Now
+              </button>
+            </a>
+          </motion.div>
         </div>
-      </SpotlightBackground>
+      </div>
     </section>
   );
 }

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import GlassSurface from '../../components/ui/GlassSurface';
 
 import GradientText from '../../components/GradientText/GradientText';
 import ShinyText from '../../components/ui/ShinyText';
@@ -92,14 +91,7 @@ export default function WhyChoose() {
                 viewport={{ once: true, margin: '-40px' }}
                 className="why-card-motion"
               >
-                <GlassSurface
-                  width="100%"
-                  height="auto"
-                  borderRadius={16}
-                  backgroundOpacity={0.08}
-                  distortionScale={-120}
-                  className="why-glass-card"
-                >
+                <div className="why-glass-card">
                   <div className="why-card-inner">
                     <div className="why-card-number ibm-plex-sans-condensed-bold">
                       {String(i + 1).padStart(2, '0')}
@@ -117,7 +109,7 @@ export default function WhyChoose() {
                       <p className="why-card-desc ibm-plex-sans-condensed-bold">{card.desc}</p>
                     </div>
                   </div>
-                </GlassSurface>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -152,14 +144,7 @@ export default function WhyChoose() {
                 viewport={{ once: true, margin: '-40px' }}
                 className="why-card-motion"
               >
-                <GlassSurface
-                  width="100%"
-                  height="auto"
-                  borderRadius={16}
-                  backgroundOpacity={0.08}
-                  distortionScale={-120}
-                  className="why-glass-card"
-                >
+                <div className="why-glass-card">
                   <div className="why-card-inner">
                     <div className="why-card-number ibm-plex-sans-condensed-bold">
                       {String(i + 3).padStart(2, '0')}
@@ -177,7 +162,7 @@ export default function WhyChoose() {
                       <p className="why-card-desc ibm-plex-sans-condensed-bold">{card.desc}</p>
                     </div>
                   </div>
-                </GlassSurface>
+                </div>
               </motion.div>
             ))}
           </div>
