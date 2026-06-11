@@ -169,8 +169,8 @@
   .curriculum-bento-grid {
     display: flex;
     flex-direction: column;
-    gap: 12vh;
-    padding-bottom: 10vh;
+    gap: 8vh;
+    padding-bottom: 5vh;
   }
   .curriculum {
     padding: 70px 20px;
@@ -181,28 +181,29 @@
   .curriculum-card {
     position: sticky;
     top: 100px;
-    min-height: 60vh;
+    height: auto;
+    min-height: auto;
     box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.7);
     border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 1.5rem 1.2rem;
+    padding: 2rem 1.5rem;
     transform-origin: top center;
   }
 }
 
 @media (max-width: 480px) {
   .curriculum {
-    padding: 60px 20px;
+    padding: 60px 16px;
   }
   .curriculum-bento-grid {
-    gap: 12vh;
+    gap: 6vh;
   }
   .curriculum-main-title {
     font-size: 1.8rem;
     margin-bottom: 2rem;
   }
   .curriculum-card {
-    padding: 1.75rem 1.25rem;
-    border-radius: 16px;
+    padding: 1.8rem 1.25rem;
+    border-radius: 20px;
   }
   .curriculum-number {
     font-size: 2.5rem;
