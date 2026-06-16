@@ -1,5 +1,4 @@
 import { FaInstagram, FaYoutube } from 'react-icons/fa6';
-import TrueFocus from '../../components/ui/TrueFocus';
 import './Footer.css';
 
 export default function Footer() {
@@ -12,15 +11,7 @@ export default function Footer() {
         
         {/* Left Side: Brand Typography */}
         <div className="footer-focus-container ibm-plex-sans-condensed-bold">
-            <TrueFocus 
-              sentence="dharsan.talks" 
-              manualMode={false} 
-              blurAmount={5} 
-              borderColor="#5227FF" 
-              glowColor="rgba(82, 39, 255, 0.4)"
-              animationDuration={0.5} 
-              pauseBetweenAnimations={2}
-            />
+            <span className="footer-brand-text">dharsan.talks</span>
         </div>
 
         {/* Right Side: Columns and Socials */}

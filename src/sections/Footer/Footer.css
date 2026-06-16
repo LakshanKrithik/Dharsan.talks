@@ -46,6 +46,15 @@
   transform: translateX(-20px); /* Move font to the left a bit */
 }
 
+.footer-brand-text {
+  color: #fff;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
 .footer-right-content {
   display: flex;
   flex-direction: row;
