@@ -42,7 +42,7 @@ const sessions = [
     modules: [
       'Amplyfing Your Speech With Body Language',
       'Using Facial Expressions',
-      'Speaking with Conviction',
+      'Speaking With Conviction To Move & Persuade People',
     ]
   },
   {
@@ -59,7 +59,6 @@ const sessions = [
     modules: [
       'Speaking With Charisma & Wit To Become Socially Likable',
       'Speaking With Authority & To Command Respect',
-      'Speaking With Conviction To Move & Persuade People',
       'How To Become An Interesting Storyteller',
     ]
   },
