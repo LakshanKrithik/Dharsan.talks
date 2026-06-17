@@ -29,8 +29,8 @@ export default function Navbar() {
     <>
       <motion.nav
         className={`navbar${scrolled ? ' scrolled' : ''}`}
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="navbar-inner">

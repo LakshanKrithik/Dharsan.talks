@@ -119,7 +119,7 @@
 }
 
 .curriculum-accent-btn {
-  background-color: var(--accent);
+  background-color: transparent;
   color: #ffffff;
   border: none;
   padding: 1.2rem 4rem;
@@ -128,8 +128,48 @@
   font-weight: 700;
   font-size: 1.15rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(61, 110, 214, 0.5), 0 0 40px rgba(61, 110, 214, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.curriculum-accent-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0%,
+    transparent 60%,
+    rgba(200, 220, 255, 0.4) 70%,
+    rgba(255, 255, 255, 0.9) 80%,
+    white 82%,
+    rgba(255, 255, 255, 0.9) 84%,
+    rgba(200, 220, 255, 0.4) 90%,
+    transparent 100%
+  );
+  transform-origin: center;
+  animation: currBtnSpin 3s linear infinite;
+  z-index: -1;
+}
+
+.curriculum-accent-btn::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--accent);
+  border-radius: 50px;
+  z-index: -1;
+}
+
+@keyframes currBtnSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .curriculum-accent-btn:hover {

@@ -39,7 +39,7 @@ export default function ValueProp() {
             <div style={{ marginBottom: '40px', width: '100%' }}>
               <BubbleText text="Teaching my 2 years of Condensed Knowledge & Real World Practices that Helps You Reach Your Untapped Speaking Potential" />
             </div>
-            <p className="font-bebas" style={{ fontSize: 'clamp(1.2rem, 5vw, 2.2rem)', fontWeight: '700', letterSpacing: '0.05em', color: 'var(--text-primary)', textTransform: 'uppercase', lineHeight: '1.2' }}>
+            <p className="value-tagline-text">
               Learn. Practice. Improve Effortlessly
             </p>
           </motion.div>
