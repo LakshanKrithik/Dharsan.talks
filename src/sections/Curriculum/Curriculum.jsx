@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -76,9 +76,9 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
 };
 
-function CurriculumCard({ session }) {
+function CurriculumCard({ session, index }) {
   return (
-    <div className="curriculum-card">
+    <div className="curriculum-card" style={{ '--card-index': index }}>
       <div className="curriculum-card-header">
         <span className="curriculum-number">{session.num}</span>
         <h2 className="curriculum-card-title">{session.title}</h2>
@@ -92,27 +92,37 @@ function CurriculumCard({ session }) {
   );
 }
 
-function DesktopShowcase() {
+export default function Curriculum() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+  const tlRef = useRef(null);
+  const stRef = useRef(null);
 
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth > 1024);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const buildScrollAnimation = useCallback(() => {
+    // Kill previous instance
+    if (stRef.current) {
+      stRef.current.kill();
+      stRef.current = null;
+    }
+    if (tlRef.current) {
+      tlRef.current.kill();
+      tlRef.current = null;
+    }
 
-  useEffect(() => {
-    if (!isDesktop) return;
+    // Only build on desktop
+    if (window.innerWidth <= 1024) return;
 
     const section = sectionRef.current;
     const track = trackRef.current;
     if (!section || !track) return;
 
     const pairElements = track.querySelectorAll('.curriculum-pair');
+    if (!pairElements.length) return;
 
-    // Set initial states: first pair visible, others hidden below
+    // Reset all transforms
+    gsap.set(pairElements, { clearProps: 'all' });
+
+    // Set initial states
     gsap.set(pairElements[0], { opacity: 1, y: '0%', scale: 1, filter: 'blur(0px)' });
     for (let i = 1; i < pairElements.length; i++) {
       gsap.set(pairElements[i], { opacity: 0, y: '40%', scale: 0.95, filter: 'blur(5px)' });
@@ -126,10 +136,10 @@ function DesktopShowcase() {
         pin: true,
         scrub: 0.4,
         anticipatePin: 1,
+        invalidateOnRefresh: true,
       }
     });
 
-    // Animate between pairs — current slides up and out, next slides up into view
     for (let i = 0; i < pairElements.length - 1; i++) {
       tl.to(pairElements[i], {
         opacity: 0,
@@ -150,138 +160,135 @@ function DesktopShowcase() {
       }, i);
     }
 
-    return () => {
-      ScrollTrigger.getAll().forEach(st => {
-        if (st.trigger === section) st.kill();
-      });
-      tl.kill();
-    };
-  }, [isDesktop]);
-
-  if (!isDesktop) return null;
-
-  return (
-    <div className="curriculum-desktop-showcase" ref={sectionRef}>
-      <div className="curriculum-desktop-inner">
-        <motion.div
-          className="curriculum-header"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={fadeUp}
-        >
-          <h1 className="curriculum-main-title">
-            This curriculum is designed to help you handle any conversation <span className="cursive-text">confidently</span>
-          </h1>
-        </motion.div>
-
-        {/* Progress indicator */}
-        <div className="curriculum-progress">
-          {pairs.map((_, idx) => (
-            <div key={idx} className="curriculum-progress-dot" />
-          ))}
-        </div>
-
-        <div className="curriculum-track" ref={trackRef}>
-          {pairs.map((pair, pIdx) => (
-            <div key={pIdx} className="curriculum-pair">
-              {pair.map(session => (
-                <CurriculumCard key={session.num} session={session} />
-              ))}
-            </div>
-          ))}
-        </div>
-
-        <motion.div
-          className="curriculum-bottom-btn-container"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-        >
-          <a href={SKOOL_URL}>
-            <button className="curriculum-accent-btn">
-              Join Now
-            </button>
-          </a>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
-
-function MobileLayout() {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
-
-  useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth > 1024);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    tlRef.current = tl;
+    stRef.current = tl.scrollTrigger;
   }, []);
 
-  if (isDesktop) return null;
+  useEffect(() => {
+    // Build on mount
+    buildScrollAnimation();
 
-  return (
-    <div className="curriculum-mobile">
-      <div className="curriculum-container">
-        <motion.div
-          className="curriculum-header"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={fadeUp}
-        >
-          <h1 className="curriculum-main-title">
-            This curriculum is designed to help you handle any conversation <span className="cursive-text">confidently</span>
-          </h1>
-        </motion.div>
+    // Debounced rebuild on resize
+    let resizeTimer;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        buildScrollAnimation();
+      }, 300);
+    };
 
-        <div className="curriculum-bento-grid">
-          {sessions.map((session, index) => (
-            <motion.div
-              key={session.num}
-              className="curriculum-card"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.2, 0, 0, 1] }}
-            >
-              <div className="curriculum-card-header">
-                <span className="curriculum-number">{session.num}</span>
-                <h2 className="curriculum-card-title">{session.title}</h2>
-              </div>
-              <ul>
-                {session.modules.map((module, mIdx) => (
-                  <li key={mIdx}>{module}</li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+    window.addEventListener('resize', handleResize);
 
-        <motion.div
-          className="curriculum-bottom-btn-container"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-        >
-          <a href={SKOOL_URL}>
-            <button className="curriculum-accent-btn">
-              Join Now
-            </button>
-          </a>
-        </motion.div>
-      </div>
-    </div>
-  );
-}
+    return () => {
+      clearTimeout(resizeTimer);
+      window.removeEventListener('resize', handleResize);
+      if (stRef.current) stRef.current.kill();
+      if (tlRef.current) tlRef.current.kill();
+    };
+  }, [buildScrollAnimation]);
 
-export default function Curriculum() {
   return (
     <section id="curriculum">
-      <DesktopShowcase />
-      <MobileLayout />
+      {/* Desktop scroll-pinned showcase */}
+      <div className="curriculum-desktop-showcase" ref={sectionRef}>
+        <div className="curriculum-desktop-inner">
+          <motion.div
+            className="curriculum-header"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={fadeUp}
+          >
+            <h1 className="curriculum-main-title">
+              This curriculum is designed to help you handle any conversation <span className="cursive-text">confidently</span>
+            </h1>
+          </motion.div>
+
+          <div className="curriculum-progress">
+            {pairs.map((_, idx) => (
+              <div key={idx} className="curriculum-progress-dot" />
+            ))}
+          </div>
+
+          <div className="curriculum-track" ref={trackRef}>
+            {pairs.map((pair, pIdx) => (
+              <div key={pIdx} className="curriculum-pair">
+                {pair.map((session) => (
+                  <CurriculumCard key={session.num} session={session} />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <motion.div
+            className="curriculum-bottom-btn-container"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            <a href={SKOOL_URL}>
+              <button className="curriculum-accent-btn">
+                Join Now
+              </button>
+            </a>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Mobile stacked layout */}
+      <div className="curriculum-mobile">
+        <div className="curriculum-container">
+          <motion.div
+            className="curriculum-header"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-100px' }}
+            variants={fadeUp}
+          >
+            <h1 className="curriculum-main-title">
+              This curriculum is designed to help you handle any conversation <span className="cursive-text">confidently</span>
+            </h1>
+          </motion.div>
+
+          <div className="curriculum-bento-grid">
+            {sessions.map((session, index) => (
+              <motion.div
+                key={session.num}
+                className="curriculum-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.2, 0, 0, 1] }}
+              >
+                <div className="curriculum-card-header">
+                  <span className="curriculum-number">{session.num}</span>
+                  <h2 className="curriculum-card-title">{session.title}</h2>
+                </div>
+                <ul>
+                  {session.modules.map((module, mIdx) => (
+                    <li key={mIdx}>{module}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="curriculum-bottom-btn-container"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            <a href={SKOOL_URL}>
+              <button className="curriculum-accent-btn">
+                Join Now
+              </button>
+            </a>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

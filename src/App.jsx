@@ -3,6 +3,7 @@ import Hero from './sections/Hero/Hero';
 import ValueProp from './sections/ValueProp/ValueProp';
 import Curriculum from './sections/Curriculum/Curriculum';
 import WhyChoose from './sections/WhyChoose/WhyChoose';
+import Testimonials from './sections/Testimonials/Testimonials';
 import Pricing from './sections/Pricing/Pricing';
 import FAQ from './sections/FAQ/FAQ';
 import Footer from './sections/Footer/Footer';
@@ -16,6 +17,7 @@ function App() {
         <ValueProp />
         <Curriculum />
         <WhyChoose />
+        <Testimonials />
         <Pricing />
         <FAQ />
       </main>

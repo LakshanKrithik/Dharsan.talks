@@ -34,8 +34,8 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="navbar-inner">
-          <div className="navbar-logo bebas-neue-regular">
-            dharsan.talks
+          <div className="navbar-logo ibm-plex-sans-condensed-bold">
+            dharsan.<span className="nav-focus-word">talks<span className="footer-frame"><span className="footer-corner footer-tl"></span><span className="footer-corner footer-tr"></span><span className="footer-corner footer-bl"></span><span className="footer-corner footer-br"></span></span></span>
           </div>
 
           <ul className="navbar-links">
