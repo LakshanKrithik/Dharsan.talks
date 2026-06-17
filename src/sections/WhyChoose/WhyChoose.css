@@ -38,8 +38,8 @@
   display: flex;
   flex-direction: column;
   min-height: auto;
-  padding: 100px 32px 0;
-  max-width: 1600px !important; /* Forces container to take more empty space relative to global container */
+  padding: 80px 32px 0;
+  max-width: 1600px !important;
   margin: 0 auto;
 }
 
@@ -104,8 +104,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 32px; /* Increased gap between cards slightly */
-  padding: 0 12px 100px; /* Increased bottom padding */
+  gap: 32px;
+  padding: 0 12px 60px;
 }
 
 .why-col--left {
@@ -198,16 +198,14 @@
 .why-center-image {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  /* Width derived from grid column definition */
 }
 
 .why-portrait {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
   box-shadow: 0 0 60px rgba(99, 145, 245, 0.25);
   display: block;
   border-radius: 16px;
