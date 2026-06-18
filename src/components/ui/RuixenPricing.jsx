@@ -10,7 +10,7 @@ export default function RuixenPricing({ plans, contactHref }) {
             <div className="ruixen-header-flex">
 
                 
-                <h2 className="ruixen-title" style={{ fontSize: '2.5rem', marginBottom: '40px' }}>Comprehensive Communication School</h2>
+                <h2 className="ruixen-title" style={{ fontSize: '3.5rem', marginBottom: '40px' }}>Programs Offered</h2>
             </div>
 
             <div className="ruixen-grid">

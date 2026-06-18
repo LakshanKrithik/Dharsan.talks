@@ -8,8 +8,8 @@ const SKOOL_URL = '#pricing';
 const plans = [
   {
     id: 'standard',
-    title: 'All Round',
-    monthlyPrice: 2999,
+    title: 'Comprehensive Communication School',
+    monthlyPrice: 3499,
     originalPrice: 7999,
     annuallyPrice: 59990,
     desc: 'Designed for individuals at every level from beginners to early advanced speakers, to systematically master and elevate their communication skills.',
@@ -27,7 +27,7 @@ const plans = [
     annuallyPrice: 449990,
     desc: 'Designed for Entrepreneurs, Creators & Founders to reach their Full Speaking Potential with Direct Guidance & Accelerated Growth.',
     features: [
-      'Includes 4 live sessions + lifetime material access',
+      'Includes 6 live sessions + lifetime material access',
       'Uniquely Curated Framework for Each Individual',
       'Personalized Feedback from Dharsan to accelerate improvement',
     ],

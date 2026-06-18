@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 import GradientText from '../../components/GradientText/GradientText';
 import ShinyText from '../../components/ui/ShinyText';
-import d3mp4 from '../../assets/d3.mp4';
+import d3mp4 from '../../assets/d3-opt.mp4';
 import './WhyChoose.css';
 
 const leftCards = [
@@ -11,15 +11,15 @@ const leftCards = [
     desc: 'Gain access to a structured, proven system built from 2 years of condensed real-world speaking knowledge.',
   },
   {
-    title: 'Daily Practice',
-    desc: 'Move beyond theory. Every session comes with actionable daily practices to lock in your learning.',
+    title: 'Build Connections',
+    desc: 'Interact with a community of driven individuals, build relationships, and hold each other accountable.',
   },
 ];
 
 const rightCards = [
   {
-    title: 'Build Connections',
-    desc: 'Interact with a community of driven individuals, build relationships, and hold each other accountable.',
+    title: 'Daily Practice',
+    desc: 'Move beyond theory. Every session comes with actionable daily practices to lock in your learning.',
   },
   {
     title: 'Build Authority',
@@ -56,7 +56,7 @@ export default function WhyChoose() {
 
           <h2 className="section-heading why-heading">
             <GradientText
-              colors={["#F0EDE6", "#6391F5", "#a78bfa", "#6391F5", "#F0EDE6"]}
+              colors={["#F0EDE6", "#6391F5", "#78B4FF", "#6391F5", "#F0EDE6"]}
               animationSpeed={6}
               showBorder={false}
               className="why-heading-gradient"
@@ -64,16 +64,16 @@ export default function WhyChoose() {
               More Than a Course
             </GradientText>
             <GradientText
-              colors={["#6391F5", "#a78bfa", "#c4b5fd", "#6391F5"]}
+              colors={["#6391F5", "#78B4FF", "#5DADE2", "#6391F5"]}
               animationSpeed={4}
               showBorder={false}
-              className="why-heading-gradient why-heading-em"
+              className="why-heading-gradient"
             >
               A Complete System
             </GradientText>
           </h2>
 
-          <div className="accent-divider" style={{ margin: '24px auto' }} />
+          <div className="accent-divider" style={{ display: 'none' }} />
         </motion.div>
 
         {/* Three-column layout */}
@@ -94,7 +94,7 @@ export default function WhyChoose() {
                 <div className="why-glass-card">
                   <div className="why-card-inner">
                     <div className="why-card-number ibm-plex-sans-condensed-bold">
-                      {String(i + 1).padStart(2, '0')}
+                      {String(i * 2 + 1).padStart(2, '0')}
                     </div>
                     <div className="why-card-text">
                       <h3 className="why-card-title ibm-plex-sans-condensed-semibold">
@@ -147,7 +147,7 @@ export default function WhyChoose() {
                 <div className="why-glass-card">
                   <div className="why-card-inner">
                     <div className="why-card-number ibm-plex-sans-condensed-bold">
-                      {String(i + 3).padStart(2, '0')}
+                      {String(i * 2 + 2).padStart(2, '0')}
                     </div>
                     <div className="why-card-text">
                       <h3 className="why-card-title ibm-plex-sans-condensed-semibold">

@@ -151,20 +151,22 @@
 
 .social-ig {
   color: #E1306C;
-  filter: brightness(1.4);
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .social-ig:hover {
   transform: scale(1.15);
-  filter: brightness(1.8) !important;
+  filter: brightness(1.3);
 }
 
 .social-yt {
   color: #FF0000;
-  filter: brightness(1.4);
 }
 .social-yt:hover {
   transform: scale(1.15);
-  filter: brightness(2) !important;
+  filter: brightness(1.3);
 }
 
 .footer-bottom {

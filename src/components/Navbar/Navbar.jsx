@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 const links = [
-  { label: 'About',      href: '#value' },
-  { label: 'Curicullum', href: '#curriculum' },
-  { label: 'Perks',      href: '#contact' },
-  { label: 'Pricing',    href: '#pricing' },
+  { label: 'About',        href: '#value' },
+  { label: 'Curriculum',   href: '#curriculum' },
+  { label: 'Perks',        href: '#why' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Pricing',      href: '#pricing' },
+  { label: 'FAQ',          href: '#faq' },
 ];
 
 export default function Navbar() {

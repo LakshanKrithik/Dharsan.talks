@@ -38,7 +38,7 @@
   display: flex;
   flex-direction: column;
   min-height: auto;
-  padding: 80px 32px 0;
+  padding: 60px 32px 40px;
   max-width: 1600px !important;
   margin: 0 auto;
 }
@@ -47,7 +47,8 @@
 .why-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 56px;
+  margin: 0 auto 40px;
+  padding-top: 20px;
   flex-shrink: 0;
 }
 
@@ -83,16 +84,12 @@
   line-height: inherit !important;
 }
 
-.why-heading-em {
-  font-style: italic !important;
-}
-
 /* ─── Three-column grid ──────────────────────────────── */
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr clamp(300px, 30vw, 480px) 1fr;
-  align-items: stretch;
-  gap: 40px; /* Slightly more gap as container expands */
+  grid-template-columns: 1fr clamp(280px, 30vw, 420px) 1fr;
+  align-items: center;
+  gap: 28px;
   flex: 1;
   max-width: 100%;
   width: 100%;
@@ -104,8 +101,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 32px;
-  padding: 0 12px 60px;
+  gap: 24px;
+  padding: 0 12px 40px;
 }
 
 .why-col--left {
@@ -125,14 +122,55 @@
 .why-glass-card {
   width: 100% !important;
   height: auto !important;
-  min-height: 180px !important;
-  border-radius: 20px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
+  min-height: 160px !important;
+  border-radius: 18px !important;
+  background: rgba(10, 10, 14, 0.95) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(99, 145, 245, 0.12);
+  border-color: rgba(99, 145, 245, 0.3) !important;
+}
+
+/* Animated border shimmer on cards */
+.why-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    var(--why-card-angle, 0deg),
+    transparent 0%,
+    transparent 40%,
+    rgba(80, 200, 255, 0.6) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: whyCardShimmer 4s linear infinite;
+}
+
+@keyframes whyCardShimmer {
+  0% { --why-card-angle: 0deg; }
+  100% { --why-card-angle: 360deg; }
+}
+
+@property --why-card-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .why-glass-card:hover {
@@ -144,10 +182,10 @@
 
 .why-card-inner {
   display: flex;
-  flex-direction: row;       /* Horizontal rectangle layout */
+  flex-direction: row;
   align-items: center;
   gap: 20px;
-  padding: 28px 32px;
+  padding: 28px 30px;
   width: 100%;
   text-align: left;
 }
@@ -161,7 +199,7 @@
 
 /* Numbered label — left side accent */
 .why-card-number {
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   font-weight: 700;
   font-family: "IBM Plex Sans Condensed", sans-serif;
   color: transparent;
@@ -171,25 +209,25 @@
   line-height: 1;
   flex-shrink: 0;
   letter-spacing: -0.03em;
-  min-width: 56px;
+  min-width: 50px;
   text-align: center;
 }
 
 .why-card-title {
-  font-size: 1.85rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.25;
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   letter-spacing: 0.02em;
   font-family: "IBM Plex Sans Condensed", sans-serif;
 }
 
 .why-card-desc {
-  font-size: 1.35rem;
-  font-weight: 600; /* Made bold */
-  color: #ffffff; /* Made pure white */
-  line-height: 1.6;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.55;
   margin: 0;
   font-family: "IBM Plex Sans Condensed", sans-serif;
 }
@@ -205,10 +243,12 @@
 .why-portrait {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  max-height: 640px;
+  object-fit: cover;
   box-shadow: 0 0 60px rgba(99, 145, 245, 0.25);
   display: block;
   border-radius: 16px;
+  background: transparent;
 }
 
 /* ─── Responsive ─────────────────────────────────────── */
@@ -226,41 +266,34 @@
 }
 
 @media (max-width: 768px) {
-  .why-bg {
-    height: 600px;
-    top: 50%;
-    transform: translateY(-50%);
-    bottom: auto;
-    opacity: 0.3;
-  }
-
   .why-container {
     min-height: unset;
-    padding: 80px 24px 80px;
+    padding: 60px 20px 60px;
   }
 
   .why-grid {
     grid-template-columns: 1fr;
     flex: unset;
-    gap: 40px;
+    gap: 24px;
   }
 
   .why-center-image {
     width: 100%;
-    max-width: 320px;
+    max-width: 260px;
     margin: 0 auto;
-    height: 400px;
+    height: auto;
+    order: -1;
   }
 
   .why-portrait {
     object-fit: cover;
-    object-position: center 20%;
+    max-height: 350px;
   }
 
   .why-col {
     padding: 0;
     align-items: stretch !important;
-    gap: 20px;
+    gap: 16px;
   }
 
   .why-card-motion {
@@ -268,32 +301,63 @@
   }
 
   .why-heading {
-    font-size: clamp(2.4rem, 7vw, 3.2rem) !important;
+    font-size: clamp(1.8rem, 7vw, 2.8rem) !important;
+  }
+
+  .why-header {
+    margin: 0 auto 24px;
+    padding-top: 0;
+  }
+
+  .why-glass-card {
+    min-height: auto !important;
+  }
+
+  .why-card-inner {
+    padding: 20px 18px;
+    gap: 14px;
+  }
+
+  .why-card-number {
+    font-size: 1.8rem;
+    min-width: 36px;
+  }
+
+  .why-card-title {
+    font-size: 1.3rem;
+    margin: 0 0 4px;
+  }
+
+  .why-card-desc {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
 
 @media (max-width: 480px) {
   .why-container {
-    padding: 60px 20px 60px;
+    padding: 50px 16px 50px;
   }
 
   .why-center-image {
-    width: 100%;
-    max-width: 300px;
-    height: 380px;
+    max-width: 220px;
+  }
+
+  .why-portrait {
+    max-height: 300px;
   }
 
   .why-card-inner {
-    padding: 24px 20px;
-    gap: 16px;
+    padding: 18px 16px;
+    gap: 12px;
   }
 
   .why-card-title {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .why-card-desc {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
   }
 }
 

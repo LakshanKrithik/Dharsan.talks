@@ -149,7 +149,6 @@ export default function FAQ() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <h2 className="section-heading">Frequently Asked Questions</h2>
-          <div className="accent-divider" style={{ margin: '20px auto' }} />
         </motion.div>
 
         <div className="faq-list">

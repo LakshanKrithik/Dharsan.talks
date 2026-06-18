@@ -17,8 +17,10 @@ export default function Footer() {
           <div className="footer-nav-col">
             <a href="#value">About</a>
             <a href="#curriculum">Curriculum</a>
-            <a href="#contact">Perks</a>
+            <a href="#why">Perks</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
           </div>
 
           <div className="footer-socials">
@@ -46,10 +48,12 @@ export default function Footer() {
       <div className="footer-mobile-layout">
         <h2 className="footer-mobile-brand ibm-plex-sans-condensed-bold">dharsan.<span className="footer-focus-word">talks<span className="footer-frame"><span className="footer-corner footer-tl"></span><span className="footer-corner footer-tr"></span><span className="footer-corner footer-bl"></span><span className="footer-corner footer-br"></span></span></span></h2>
         <nav className="footer-mobile-nav">
+          <a href="#value">About</a>
           <a href="#curriculum">Curriculum</a>
+          <a href="#why">Perks</a>
+          <a href="#testimonials">Testimonials</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
-          <a href="#pricing">Join Cohort</a>
         </nav>
         <div className="footer-mobile-socials">
           <a 
