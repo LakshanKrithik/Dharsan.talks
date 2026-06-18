@@ -1,7 +1,7 @@
 .bubble-text-container {
   text-align: left;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
-  font-size: clamp(1.4rem, 5vw, 2.5rem); /* Scaled down minimum for mobile */
+  font-size: clamp(1.6rem, 5vw, 3rem);
   font-weight: 300;
   color: var(--text-secondary);
   cursor: default;

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Aurora from '../../components/ui/Aurora';
 import BubbleText from '../../components/ui/BubbleText';
-import dharsanImage from '../../assets/ted d.png'; // load graphic
+import dharsanImage from '../../assets/ted d2.png'; // load graphic
 import './ValueProp.css';
 
 const SKOOL_URL = '#pricing';
