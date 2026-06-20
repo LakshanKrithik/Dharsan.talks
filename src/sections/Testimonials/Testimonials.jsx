@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import './Testimonials.css';
 
@@ -78,6 +79,22 @@ function TestimonialCard({ testimonial }) {
 }
 
 export default function Testimonials() {
+  const marqueeRef = useRef(null);
+
+  const handleTouchStart = () => {
+    if (marqueeRef.current) {
+      marqueeRef.current.classList.add('is-touching');
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (marqueeRef.current) {
+      setTimeout(() => {
+        marqueeRef.current?.classList.remove('is-touching');
+      }, 500); // Resume after 0.5s of no touch
+    }
+  };
+
   return (
     <section className="testimonials-section" id="testimonials">
       <div className="testimonials-container">
@@ -97,7 +114,12 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Single row — scrolls left */}
-        <div className="testimonials-marquee">
+        <div
+          className="testimonials-marquee"
+          ref={marqueeRef}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="testimonials-track testimonials-track--left">
             {doubledTestimonials.map((t, i) => (
               <TestimonialCard key={`row1-${i}`} testimonial={t} />

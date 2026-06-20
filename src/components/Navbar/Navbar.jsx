@@ -62,14 +62,14 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {menuOpen && (
           <motion.div
             className="mobile-menu open"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           >
             {links.map((l, i) => (
               <motion.a

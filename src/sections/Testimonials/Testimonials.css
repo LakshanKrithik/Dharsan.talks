@@ -57,9 +57,23 @@
   animation: scrollLeft 60s linear infinite;
 }
 
-/* Pause on hover for readability */
-.testimonials-marquee:hover .testimonials-track {
-  animation-play-state: paused;
+/* Pause on hover for readability (desktop only) */
+@media (min-width: 769px) {
+  .testimonials-marquee:hover .testimonials-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Mobile: pause on touch, resume after */
+@media (max-width: 768px) {
+  .testimonials-marquee {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .testimonials-marquee.is-touching .testimonials-track {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes scrollLeft {
@@ -161,10 +175,6 @@
   .testimonial-card {
     width: 340px;
     padding: 1.75rem;
-  }
-
-  .testimonials-track--left {
-    animation-duration: 45s;
   }
 }
 
