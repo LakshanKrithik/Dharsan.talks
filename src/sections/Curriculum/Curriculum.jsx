@@ -58,7 +58,7 @@ const sessions = [
     title: 'Mastering Social Interactions',
     modules: [
       'Speaking With Charisma & Wit To Become Socially Likable',
-      'Speaking With Authority & To Command Respect',
+      'Speaking With Authority To Command Respect',
       'How To Become An Interesting Storyteller',
     ]
   },

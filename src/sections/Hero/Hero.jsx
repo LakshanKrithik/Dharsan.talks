@@ -143,8 +143,8 @@ export default function Hero() {
         <div style={{ position: 'relative', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ textAlign: 'center', width: '100%', zIndex: 10 }}>
             <h1 className="hero-title">
-              The Complete Communication School to
-              <span className="hero-title-line2">Speak With <span className="hero-title-accent">Confidence</span> and <span className="hero-title-accent">Fluency</span></span>
+              The Complete Communication School to Help You Speak With
+              <span className="hero-title-line2"><span className="hero-title-accent">Confidence</span> and <span className="hero-title-accent">Fluency</span></span>
             </h1>
           </div>
         </div>

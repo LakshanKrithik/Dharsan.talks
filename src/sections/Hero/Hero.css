@@ -55,11 +55,11 @@
 }
 
 .hero-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 6vw, 6rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.0;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
   color: #ffffff;
   margin-bottom: 32px;
   text-align: center;
@@ -82,7 +82,7 @@
 
 .hero-subtitle {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.8);
   max-width: 580px;
   margin: 0 auto 48px;
   line-height: 1.6;
@@ -166,7 +166,7 @@
 
 @media (max-width: 768px) {
   .hero-content {
-    padding: 0 24px;
+    padding: 0 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -174,32 +174,35 @@
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 8vw, 3rem);
+    font-size: clamp(2rem, 7.5vw, 3rem);
     margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .hero-title-line2 {
+    display: block;
+    margin-top: 4px;
   }
 
   .hero-subtitle {
     margin-bottom: 32px;
     text-align: center;
+    font-size: 1rem;
   }
 
   .hero-cta-group {
     justify-content: center;
   }
-
-  .hide-on-mobile {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 120px 20px 80px;
+    padding: 100px 16px 60px;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 9vw, 2.5rem);
-    line-height: 1.05;
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    line-height: 1.1;
   }
 
   .hero-content {
@@ -207,9 +210,9 @@
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
 
   .hero-cta-group {
