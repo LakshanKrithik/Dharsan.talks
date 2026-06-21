@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './Hero.css';
 
@@ -12,127 +11,22 @@ const fadeUp = (delay = 0) => ({
   }
 });
 
-function VectorField() {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    let width, height;
-    let lines = [];
-    const spacing = 50;
-    const lineLength = 12;
-
-    let mouse = { x: -1000, y: -1000, radius: 400 };
-    let targetMouse = { x: -1000, y: -1000 };
-
-    const handleMouseMove = (e) => {
-      targetMouse.x = e.clientX;
-      targetMouse.y = e.clientY;
-    };
-
-    const handleTouchMove = (e) => {
-      targetMouse.x = e.touches[0].clientX;
-      targetMouse.y = e.touches[0].clientY;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove);
-
-    class Line {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.baseAngle = -Math.PI / 4;
-        this.angle = this.baseAngle;
-        this.opacity = 0.2;
-      }
-
-      draw() {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const distance = Math.hypot(dx, dy);
-
-        if (distance < mouse.radius) {
-          const targetAngle = Math.atan2(dy, dx) + Math.PI / 2;
-          const effectStrength = 1 - (distance / mouse.radius);
-          const angleDiff = targetAngle - this.angle;
-          this.angle += angleDiff * 0.1;
-          this.opacity = 0.2 + (0.6 * effectStrength);
-        } else {
-          const angleDiff = this.baseAngle - this.angle;
-          this.angle += angleDiff * 0.05;
-          this.opacity += (0.2 - this.opacity) * 0.05;
-        }
-
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.angle);
-        ctx.beginPath();
-        ctx.moveTo(-lineLength / 2, 0);
-        ctx.lineTo(lineLength / 2, 0);
-        ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
-        ctx.lineWidth = 1.5;
-        ctx.lineCap = 'round';
-        ctx.stroke();
-        ctx.restore();
-      }
-    }
-
-    function initGrid() {
-      lines = [];
-      const buffer = spacing;
-      for (let x = -buffer; x < width + buffer; x += spacing) {
-        for (let y = -buffer; y < height + buffer; y += spacing) {
-          lines.push(new Line(x, y));
-        }
-      }
-    }
-
-    function resize() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      initGrid();
-    }
-
-    let animId;
-    function animate() {
-      mouse.x += (targetMouse.x - mouse.x) * 0.1;
-      mouse.y += (targetMouse.y - mouse.y) * 0.1;
-
-      ctx.fillStyle = '#050505';
-      ctx.fillRect(0, 0, width, height);
-
-      lines.forEach(line => line.draw());
-      animId = requestAnimationFrame(animate);
-    }
-
-    resize();
-    animate();
-
-    window.addEventListener('resize', resize);
-
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener('resize', resize);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="hero-vector-field" />;
-}
-
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      {/* Vector Field Canvas */}
-      <VectorField />
-
-      {/* Blue aura glow */}
-      <div className="hero-blue-aura" />
+      {/* Aura Background */}
+      <div className="hero-aura-container">
+        {/* Top right intense dark blue sweep */}
+        <div className="hero-aura-blob hero-aura-tr-sweep" />
+        {/* Top right core */}
+        <div className="hero-aura-blob hero-aura-tr-core" />
+        {/* Bottom left deep blue sweep */}
+        <div className="hero-aura-blob hero-aura-bl-sweep" />
+        {/* Bottom left core */}
+        <div className="hero-aura-blob hero-aura-bl-core" />
+        {/* Center ambient */}
+        <div className="hero-aura-blob hero-aura-center" />
+      </div>
 
       {/* Content */}
       <motion.div
