@@ -5,27 +5,28 @@ import ShinyText from '../../components/ui/ShinyText';
 import d3mp4 from '../../assets/d3-opt.mp4';
 import './WhyChoose.css';
 
-const leftCards = [
+const allCards = [
   {
     title: 'Learn the Skill',
     desc: 'Gain access to a structured, proven system built from 2 years of condensed real-world speaking knowledge.',
   },
   {
-    title: 'Build Connections',
-    desc: 'Interact with a community of driven individuals, build relationships, and hold each other accountable.',
-  },
-];
-
-const rightCards = [
-  {
     title: 'Daily Practice',
     desc: 'Move beyond theory. Every session comes with actionable daily practices to lock in your learning.',
+  },
+  {
+    title: 'Build Connections',
+    desc: 'Interact with a community of driven individuals, build relationships, and hold each other accountable.',
   },
   {
     title: 'Build Authority',
     desc: 'Become socially magnetic. Watch your career, business, and relationships transform as your voice gains power.',
   },
 ];
+
+// Desktop splits: left = cards 0,2 (01,03), right = cards 1,3 (02,04)
+const leftCards = [allCards[0], allCards[2]];
+const rightCards = [allCards[1], allCards[3]];
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },
@@ -52,8 +53,6 @@ export default function WhyChoose() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-
-
           <h2 className="section-heading why-heading">
             <GradientText
               colors={["#F0EDE6", "#6391F5", "#78B4FF", "#6391F5", "#F0EDE6"]}
@@ -76,9 +75,8 @@ export default function WhyChoose() {
           <div className="accent-divider" style={{ display: 'none' }} />
         </motion.div>
 
-        {/* Three-column layout */}
-        <div className="why-grid">
-
+        {/* Desktop: Three-column layout */}
+        <div className="why-grid why-grid--desktop">
           {/* Left Cards */}
           <div className="why-col why-col--left">
             {leftCards.map((card, i) => (
@@ -166,8 +164,56 @@ export default function WhyChoose() {
               </motion.div>
             ))}
           </div>
-
         </div>
+
+        {/* Mobile: video first, then all cards in 1-2-3-4 order */}
+        <div className="why-grid why-grid--mobile">
+          <motion.div
+            className="why-center-image"
+            initial={{ opacity: 0, scale: 0.94 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <video
+              src={d3mp4}
+              className="why-portrait"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          </motion.div>
+
+          <div className="why-col">
+            {allCards.map((card, i) => (
+              <motion.div
+                key={card.title}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-40px' }}
+                className="why-card-motion"
+              >
+                <div className="why-glass-card">
+                  <div className="why-card-inner">
+                    <div className="why-card-number ibm-plex-sans-condensed-bold">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <div className="why-card-text">
+                      <h3 className="why-card-title ibm-plex-sans-condensed-semibold">
+                        <span className="why-card-title-static">{card.title}</span>
+                      </h3>
+                      <p className="why-card-desc ibm-plex-sans-condensed-bold">{card.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
