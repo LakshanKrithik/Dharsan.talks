@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import img1 from '../../assets/Img 1.jpg';
-import img2 from '../../assets/Img 2.jpg';
-import img3 from '../../assets/Img 3.jpg';
+import vid1 from '../../assets/Website Video 1.mp4';
+import vid2 from '../../assets/Website Video 2.mp4';
+import vid3 from '../../assets/Website Video 3.mp4';
 import './Hero.css';
 
 const SKOOL_URL = '#pricing';
@@ -152,16 +152,16 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image placeholders */}
+        {/* Video placeholders */}
         <motion.div className="hero-images" variants={fadeUp(0.24)}>
           <div className="hero-img-placeholder">
-            <img src={img1} alt="Speaking showcase 1" />
+            <video src={vid1} autoPlay loop muted playsInline />
           </div>
           <div className="hero-img-placeholder">
-            <img src={img2} alt="Speaking showcase 2" />
+            <video src={vid3} autoPlay loop muted playsInline />
           </div>
           <div className="hero-img-placeholder">
-            <img src={img3} alt="Speaking showcase 3" />
+            <video src={vid2} autoPlay loop muted playsInline />
           </div>
         </motion.div>
 

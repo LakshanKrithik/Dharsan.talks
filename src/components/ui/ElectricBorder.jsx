@@ -154,7 +154,7 @@ const ElectricBorder = ({
     observer.observe(container);
 
     // Configuration
-    const octaves = 10;
+    const octaves = 4;
     const lacunarity = 1.6;
     const gain = 0.7;
     const amplitude = chaos;
@@ -162,6 +162,8 @@ const ElectricBorder = ({
     const baseFlatness = 0;
     const displacement = 60;
     const borderOffset = 60;
+    const targetFPS = 30; // Throttle to 30fps
+    const frameInterval = 1000 / targetFPS;
 
     const updateSize = () => {
       const rect = container.getBoundingClientRect();
@@ -185,7 +187,11 @@ const ElectricBorder = ({
       animationRef.current = requestAnimationFrame(drawElectricBorder);
       if (!canvas || !ctx || !isInViewRef.current) return;
 
-      const deltaTime = (currentTime - lastFrameTimeRef.current) / 1000;
+      // Throttle to target FPS
+      const elapsed = currentTime - lastFrameTimeRef.current;
+      if (elapsed < frameInterval) return;
+
+      const deltaTime = elapsed / 1000;
       timeRef.current += deltaTime * speed;
       lastFrameTimeRef.current = currentTime;
 
@@ -209,7 +215,7 @@ const ElectricBorder = ({
       const radius = Math.min(borderRadius, maxRadius);
 
       const approximatePerimeter = 2 * (borderWidth + borderHeight) + 2 * Math.PI * radius;
-      const sampleCount = Math.floor(approximatePerimeter / 2);
+      const sampleCount = Math.floor(approximatePerimeter / 4);
 
       ctx.beginPath();
 

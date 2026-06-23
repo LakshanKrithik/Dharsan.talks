@@ -59,7 +59,6 @@ const sessions = [
     modules: [
       'Speaking With Charisma & Wit To Become Socially Likable',
       'Speaking With Authority To Command Respect',
-      'How To Become An Interesting Storyteller',
     ]
   },
 ];
