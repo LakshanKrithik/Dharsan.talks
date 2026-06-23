@@ -166,8 +166,36 @@ export default function WhyChoose() {
           </div>
         </div>
 
-        {/* Mobile: video first, then all cards in 1-2-3-4 order */}
+        {/* Mobile: cards 1-2, then video, then cards 3-4 */}
         <div className="why-grid why-grid--mobile">
+          <div className="why-col">
+            {allCards.slice(0, 2).map((card, i) => (
+              <motion.div
+                key={card.title}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-40px' }}
+                className="why-card-motion"
+              >
+                <div className="why-glass-card">
+                  <div className="why-card-inner">
+                    <div className="why-card-number ibm-plex-sans-condensed-bold">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <div className="why-card-text">
+                      <h3 className="why-card-title ibm-plex-sans-condensed-semibold">
+                        <span className="why-card-title-static">{card.title}</span>
+                      </h3>
+                      <p className="why-card-desc ibm-plex-sans-condensed-bold">{card.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
           <motion.div
             className="why-center-image"
             initial={{ opacity: 0, scale: 0.94 }}
@@ -186,7 +214,7 @@ export default function WhyChoose() {
           </motion.div>
 
           <div className="why-col">
-            {allCards.map((card, i) => (
+            {allCards.slice(2, 4).map((card, i) => (
               <motion.div
                 key={card.title}
                 custom={i}
@@ -199,7 +227,7 @@ export default function WhyChoose() {
                 <div className="why-glass-card">
                   <div className="why-card-inner">
                     <div className="why-card-number ibm-plex-sans-condensed-bold">
-                      {String(i + 1).padStart(2, '0')}
+                      {String(i + 3).padStart(2, '0')}
                     </div>
                     <div className="why-card-text">
                       <h3 className="why-card-title ibm-plex-sans-condensed-semibold">

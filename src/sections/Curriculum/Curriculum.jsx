@@ -132,7 +132,7 @@ export default function Curriculum() {
         start: 'top top',
         end: `+=${(pairElements.length - 1) * 55}%`,
         pin: true,
-        scrub: 0.4,
+        scrub: 1.2,
         anticipatePin: 1,
         invalidateOnRefresh: true,
       }
@@ -145,7 +145,7 @@ export default function Curriculum() {
         scale: 0.95,
         filter: 'blur(5px)',
         duration: 1,
-        ease: 'power3.inOut',
+        ease: 'none',
       }, i);
 
       tl.to(pairElements[i + 1], {
@@ -154,7 +154,7 @@ export default function Curriculum() {
         scale: 1,
         filter: 'blur(0px)',
         duration: 1,
-        ease: 'power3.inOut',
+        ease: 'none',
       }, i);
     }
 
