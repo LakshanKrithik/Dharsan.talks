@@ -11,30 +11,30 @@
   justify-content: center;
   overflow: hidden;
   font-family: 'Inter', sans-serif;
-  background-color: #050505;
+  background: radial-gradient(circle at center, #0a0f1a 0%, #050505 70%);
 }
 
-/* Vector field canvas */
-.hero-vector-field {
+/* Ambient glow from top */
+.hero-ambient-glow {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Blue aura glow behind content */
-.hero-blue-aura {
-  position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  background: radial-gradient(ellipse at center, rgba(30, 64, 175, 0.2) 0%, rgba(30, 58, 138, 0.08) 40%, transparent 70%);
-  pointer-events: none;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 800px;
+  height: 350px;
+  background: radial-gradient(ellipse at top, rgba(61, 110, 214, 0.7) 0%, rgba(34, 78, 163, 0.3) 30%, rgba(10, 20, 60, 0.1) 60%, transparent 80%);
   z-index: 1;
+  pointer-events: none;
+}
+
+/* Remove old unused styles */
+.hero-vector-field {
+  display: none;
+}
+
+.hero-blue-aura {
+  display: none;
 }
 
 .hero-content {

@@ -76,10 +76,10 @@
   }
 }
 
-/* Mobile: keep auto-scroll but allow manual swipe to override */
+/* Mobile: keep auto-scroll but allow manual swipe too */
 @media (max-width: 768px) {
-  .testimonials-marquee:active .testimonials-track--left {
-    animation-play-state: paused;
+  .testimonials-track--left {
+    animation: scrollLeft 45s linear infinite;
   }
 }
 
