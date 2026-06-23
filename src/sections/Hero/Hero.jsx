@@ -35,16 +35,28 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Video placeholders */}
-        <motion.div className="hero-images" variants={fadeUp(0.24)}>
+        {/* Videos - desktop: static grid */}
+        <motion.div className="hero-images hero-images--desktop" variants={fadeUp(0.24)}>
           <div className="hero-img-placeholder">
-            <video src={vid1} autoPlay loop muted playsInline />
+            <video src={vid1} autoPlay loop muted playsInline preload="auto" />
           </div>
           <div className="hero-img-placeholder">
-            <video src={vid3} autoPlay loop muted playsInline />
+            <video src={vid3} autoPlay loop muted playsInline preload="auto" />
           </div>
           <div className="hero-img-placeholder">
-            <video src={vid2} autoPlay loop muted playsInline />
+            <video src={vid2} autoPlay loop muted playsInline preload="auto" />
+          </div>
+        </motion.div>
+
+        {/* Videos - mobile: scrolling marquee with preloaded videos */}
+        <motion.div className="hero-images hero-images--mobile" variants={fadeUp(0.24)}>
+          <div className="hero-video-track">
+            <div className="hero-vid-item"><video src={vid1} autoPlay loop muted playsInline preload="auto" /></div>
+            <div className="hero-vid-item"><video src={vid3} autoPlay loop muted playsInline preload="auto" /></div>
+            <div className="hero-vid-item"><video src={vid2} autoPlay loop muted playsInline preload="auto" /></div>
+            <div className="hero-vid-item"><video src={vid1} autoPlay loop muted playsInline preload="auto" /></div>
+            <div className="hero-vid-item"><video src={vid3} autoPlay loop muted playsInline preload="auto" /></div>
+            <div className="hero-vid-item"><video src={vid2} autoPlay loop muted playsInline preload="auto" /></div>
           </div>
         </motion.div>
 
