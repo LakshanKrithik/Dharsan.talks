@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import img1 from '../../assets/Img 1.jpg';
+import img2 from '../../assets/Img 2.jpg';
+import img3 from '../../assets/Img 3.jpg';
 import './Hero.css';
 
 const SKOOL_URL = '#pricing';
@@ -148,6 +151,19 @@ export default function Hero() {
             </h1>
           </div>
         </div>
+
+        {/* Image placeholders */}
+        <motion.div className="hero-images" variants={fadeUp(0.24)}>
+          <div className="hero-img-placeholder">
+            <img src={img1} alt="Speaking showcase 1" />
+          </div>
+          <div className="hero-img-placeholder">
+            <img src={img2} alt="Speaking showcase 2" />
+          </div>
+          <div className="hero-img-placeholder">
+            <img src={img3} alt="Speaking showcase 3" />
+          </div>
+        </motion.div>
 
         <motion.p className="hero-subtitle" variants={fadeUp(0.28)}>
           Dedicate just 12 weeks of your life to master the most valuable skill ever

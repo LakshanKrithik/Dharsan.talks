@@ -4,52 +4,40 @@ import './Testimonials.css';
 
 const testimonials = [
   {
-    name: 'Arun K.',
-    role: 'Entrepreneur',
-    text: 'This program completely changed how I communicate in meetings. I went from nervous to commanding the room in just 6 weeks.',
-    avatar: null,
+    text: 'Session went good. It was informative and I learned new practicing techniques. I got to know my mistakes, and the PRP framework you taught (Point, Reason, Example, Point) was really helpful. Overall, the session was excellent.',
   },
   {
-    name: 'Priya S.',
-    role: 'Content Creator',
-    text: 'My storytelling improved dramatically. My audience engagement doubled after applying the techniques from this curriculum.',
-    avatar: null,
+    text: 'I really felt the session was useful, even though I have watched many videos on communication before. I liked how you explained each and every mistake with precision. Everything is practical and follows a simple structure that can be practiced daily. It was a lovely session.',
   },
   {
-    name: 'Rahul M.',
-    role: 'Software Engineer',
-    text: 'I used to struggle in interviews. After this program, I landed offers from 3 top companies. The confidence shift is real.',
-    avatar: null,
+    text: "Today's session was very useful. I learned many new things about speech clarity, mouth flexibility, and mind-mouth connection. It was very interactive and helpful for improving confidence. Thank you.",
   },
   {
-    name: 'Sneha R.',
-    role: 'MBA Student',
-    text: 'The vocabulary and accent modules were game-changers. People now compliment my communication skills regularly.',
-    avatar: null,
+    text: 'It was really an amazing session. It was very informative. I had missed the live session, but after watching the recording I found it completely knowledgeable. The concept of conviction was totally new to me and the time spent was worthwhile. Thank you for sharing such valuable information.',
   },
   {
-    name: 'Vikram D.',
-    role: 'Sales Manager',
-    text: 'My closing rate went up 40% after mastering the persuasion and conviction techniques. Worth every penny.',
-    avatar: null,
+    text: 'It was a good session. From the warm-up exercises and speech clarity training to the PRP framework and real-time audience conversations, everything was knowledgeable and insightful.',
   },
   {
-    name: 'Ananya P.',
-    role: 'Public Speaker',
-    text: 'I thought I was already a good speaker. This program showed me how much more impactful I could be. Absolutely transformative.',
-    avatar: null,
+    text: "Today's session was truly amazing and very insightful. You are the real OG of communication skills. I'm sure your dream of becoming the world's best orator will come true because the impact you create on people is incredible. Nailed it!",
   },
   {
-    name: 'Karthik V.',
-    role: 'Startup Founder',
-    text: 'Pitching to investors used to terrify me. Now I walk in with clarity and charisma. This is the real deal.',
-    avatar: null,
+    text: 'The session was very good and interactive. I learned many things about improving charisma, authority, and building vocabulary. Thank you for spending extra time clearing our doubts. This session was highly interactive, and even two hours felt insufficient because of the depth of information covered. Thank you for your guidance.',
   },
   {
-    name: 'Deepa N.',
-    role: 'HR Professional',
-    text: 'The body language and facial expression modules helped me connect with people on a deeper level. Highly recommend.',
-    avatar: null,
+    text: 'The session was really good and helpful. I learned many new things about speech clarity, confidence, and communication. The activities and interactions made the session interesting and easy to understand. Thank you for conducting such an informative session.',
+  },
+  {
+    text: 'It was a really great session with excellent guidance. The communication practice examples were extremely helpful.',
+  },
+  {
+    text: "I learned many things from today's session. It was unique and very useful. I got to know different exercises for improving speech clarity, thought clarity, and mind-to-mouth connection. The session felt genuine, and you were very patient throughout. You even extended the session by an hour to ensure everyone understood everything clearly. Thank you.",
+  },
+  {
+    text: "Today's session was great and informative. You covered important topics like being charismatic, authoritative, and building vocabulary. As a beginner, some parts were challenging, but I feel I'm improving. After attending these sessions, I realized I need to practice by talking to more people. Thank you for your guidance.",
+  },
+  {
+    text: 'The session was very interactive and you tried your best to answer every question asked. All the techniques you shared were unique and interesting to practice. Worth every penny paid.',
   },
 ];
 
@@ -65,15 +53,6 @@ function TestimonialCard({ testimonial }) {
         </svg>
       </div>
       <p className="testimonial-text">{testimonial.text}</p>
-      <div className="testimonial-author">
-        <div className="testimonial-avatar">
-          {testimonial.name.charAt(0)}
-        </div>
-        <div className="testimonial-info">
-          <span className="testimonial-name">{testimonial.name}</span>
-          <span className="testimonial-role">{testimonial.role}</span>
-        </div>
-      </div>
     </div>
   );
 }
