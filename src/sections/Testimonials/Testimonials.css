@@ -37,44 +37,48 @@
   margin: 0 auto;
 }
 
-/* Marquee wrapper */
+/* Marquee wrapper — now scrollable */
 .testimonials-marquee {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   margin-bottom: 24px;
-  /* Fade edges */
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
 }
 
-/* Track — holds doubled cards for seamless loop */
+.testimonials-marquee::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.testimonials-marquee:active {
+  cursor: grabbing;
+}
+
+/* Track — holds cards in a row */
 .testimonials-track {
   display: flex;
   gap: 20px;
   width: max-content;
-  will-change: transform;
+  padding: 0 24px;
 }
 
 .testimonials-track--left {
   animation: scrollLeft 60s linear infinite;
 }
 
-/* Pause on hover for readability (desktop only) */
+/* Pause animation on hover (desktop) */
 @media (min-width: 769px) {
   .testimonials-marquee:hover .testimonials-track {
     animation-play-state: paused;
   }
 }
 
-/* Mobile: pause on touch, resume after */
+/* Mobile: keep auto-scroll but allow manual swipe to override */
 @media (max-width: 768px) {
-  .testimonials-marquee {
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .testimonials-marquee.is-touching .testimonials-track {
+  .testimonials-marquee:active .testimonials-track--left {
     animation-play-state: paused;
   }
 }

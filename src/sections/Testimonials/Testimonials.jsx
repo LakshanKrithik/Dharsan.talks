@@ -59,19 +59,28 @@ function TestimonialCard({ testimonial }) {
 
 export default function Testimonials() {
   const marqueeRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
-  const handleTouchStart = () => {
-    if (marqueeRef.current) {
-      marqueeRef.current.classList.add('is-touching');
-    }
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    startX.current = e.pageX - marqueeRef.current.offsetLeft;
+    scrollLeft.current = marqueeRef.current.scrollLeft;
+    marqueeRef.current.style.cursor = 'grabbing';
   };
 
-  const handleTouchEnd = () => {
-    if (marqueeRef.current) {
-      setTimeout(() => {
-        marqueeRef.current?.classList.remove('is-touching');
-      }, 500); // Resume after 0.5s of no touch
-    }
+  const handleMouseUp = () => {
+    isDragging.current = false;
+    if (marqueeRef.current) marqueeRef.current.style.cursor = 'grab';
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const x = e.pageX - marqueeRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    marqueeRef.current.scrollLeft = scrollLeft.current - walk;
   };
 
   return (
@@ -92,12 +101,14 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Single row — scrolls left */}
+        {/* Scrollable testimonials row */}
         <div
           className="testimonials-marquee"
           ref={marqueeRef}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onMouseMove={handleMouseMove}
         >
           <div className="testimonials-track testimonials-track--left">
             {doubledTestimonials.map((t, i) => (
