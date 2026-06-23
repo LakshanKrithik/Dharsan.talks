@@ -6,7 +6,7 @@ import './FAQ.css';
 const faqs = [
   {
     q: 'Who is this program for?',
-    a: 'Entrepreneurs, creators, students, professionals—anyone who wants to speak clearly, confidently, and persuasively in real-world situations.',
+    a: 'Entrepreneurs, creators, students, professionals, anyone who wants to speak clearly, confidently, and persuasively in real-world situations.',
   },
   {
     q: 'What results can I realistically expect?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'Is there lifetime access?',
-    a: "No. You'll receive 2 months of access—intentionally designed to create urgency and ensure you take action. This is more than enough time to fully learn and absorb the entire system.",
+    a: "No. You'll receive 2 months of access, intentionally designed to create urgency and ensure you take action. This is more than enough time to fully learn and absorb the entire system.",
   },
 ];
 

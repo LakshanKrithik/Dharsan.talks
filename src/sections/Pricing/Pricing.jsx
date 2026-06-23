@@ -19,6 +19,7 @@ const plans = [
       'Access to a community of like-minded individuals',
     ],
     buttonText: 'Join Now',
+    href: 'https://rzp.io/rzp/g246ntYw',
   },
   {
     id: 'mastermind',
@@ -32,6 +33,7 @@ const plans = [
       'Personalized Feedback from Dharsan to accelerate improvement',
     ],
     buttonText: 'Apply Now',
+    href: 'https://forms.gle/txrLdiHRsa4YxNDC7',
   },
 ];
 

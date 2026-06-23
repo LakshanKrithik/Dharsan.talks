@@ -53,7 +53,7 @@ export default function ValueProp() {
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
           >
             <div className="value-author-image" style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--accent-border)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}>
-              <img src={dharsanImage} alt="Dharsan P" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
+              <img src={dharsanImage} alt="Dharsan P" loading="lazy" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8,8,8,0.9), transparent 60%)', pointerEvents: 'none' }} />
             </div>
           </motion.div>

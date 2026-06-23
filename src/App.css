@@ -3,6 +3,7 @@
   padding: 5px 10px;
   border-radius: 5px;
   color: var(--accent);
+  color: var(--accent);
   background: var(--accent-bg);
   border: 2px solid transparent;
   transition: border-color 0.3s;
@@ -180,5 +181,22 @@
   &::after {
     right: 0;
     border-right-color: var(--border);
+  }
+}
+
+/* ─── Global performance optimizations ─── */
+.section,
+.hero,
+.testimonials-section,
+.pricing {
+  contain: layout style paint;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

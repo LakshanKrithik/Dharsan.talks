@@ -132,7 +132,7 @@ export default function Aurora(props) {
     const renderer = new Renderer({
       alpha: true,
       premultipliedAlpha: true,
-      antialias: true
+      antialias: false
     });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);
@@ -141,12 +141,16 @@ export default function Aurora(props) {
     gl.canvas.style.backgroundColor = 'transparent';
 
     let program;
+    const isMobile = window.innerWidth <= 768;
+    const renderScale = isMobile ? 0.5 : 1;
 
     function resize() {
       if (!ctn) return;
-      const width = ctn.offsetWidth;
-      const height = ctn.offsetHeight;
+      const width = Math.round(ctn.offsetWidth * renderScale);
+      const height = Math.round(ctn.offsetHeight * renderScale);
       renderer.setSize(width, height);
+      gl.canvas.style.width = ctn.offsetWidth + 'px';
+      gl.canvas.style.height = ctn.offsetHeight + 'px';
       if (program) {
         program.uniforms.uResolution.value = [width, height];
       }
@@ -179,10 +183,16 @@ export default function Aurora(props) {
     ctn.appendChild(gl.canvas);
 
     let animateId = 0;
+    let lastFrame = 0;
+    const frameInterval = 1000 / 30; // 30fps cap
+    
     const update = t => {
       animateId = requestAnimationFrame(update);
       
       if (!isInViewRef.current) return;
+      
+      if (t - lastFrame < frameInterval) return;
+      lastFrame = t;
 
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       program.uniforms.uTime.value = time * speed * 0.1;

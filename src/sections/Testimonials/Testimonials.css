@@ -63,6 +63,7 @@
   gap: 20px;
   width: max-content;
   padding: 0 24px;
+  will-change: transform;
 }
 
 .testimonials-track--left {

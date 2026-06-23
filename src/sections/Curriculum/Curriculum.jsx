@@ -6,7 +6,7 @@ import './Curriculum.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SKOOL_URL = '#pricing';
+const SKOOL_URL = 'https://rzp.io/rzp/g246ntYw';
 
 const sessions = [
   {
@@ -130,9 +130,9 @@ export default function Curriculum() {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: `+=${(pairElements.length - 1) * 55}%`,
+        end: `+=${(pairElements.length - 1) * 35}%`,
         pin: true,
-        scrub: 1.2,
+        scrub: 0.6,
         anticipatePin: 1,
         invalidateOnRefresh: true,
       }

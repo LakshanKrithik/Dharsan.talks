@@ -231,6 +231,11 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    align-items: flex-start;
+    padding-top: 100px;
+  }
+
   .hero-content {
     padding: 0 20px;
     text-align: center;
@@ -240,9 +245,9 @@
   }
 
   .hero-title {
-    font-size: clamp(2rem, 7.5vw, 3rem);
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
     margin-bottom: 20px;
-    line-height: 1.1;
+    line-height: 1.05;
   }
 
   .hero-title-line2 {
@@ -251,9 +256,9 @@
   }
 
   .hero-subtitle {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .hero-cta-group {
@@ -274,12 +279,12 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 70px 16px 40px;
+    padding: 90px 16px 40px;
   }
 
   .hero-title {
-    font-size: clamp(1.8rem, 8vw, 2.4rem);
-    line-height: 1.1;
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.05;
   }
 
   .hero-content {
@@ -287,9 +292,9 @@
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 28px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
   }
 
   .hero-cta-group {

@@ -24,6 +24,7 @@ export default function RuixenPricing({ plans, contactHref }) {
 
 const PlanCard = ({ plan, contactHref }) => {
     const isMastermind = plan.id === "mastermind";
+    const buttonLink = plan.href || contactHref;
     
     const cardContent = (
         <div className={`ruixen-card ${isMastermind ? "mastermind" : ""}`}>
@@ -57,7 +58,7 @@ const PlanCard = ({ plan, contactHref }) => {
             </div>
 
             <div className="ruixen-card-middle" style={{ marginTop: "1rem" }}>
-                <a href={contactHref} style={{ textDecoration: 'none' }}>
+                <a href={buttonLink} target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
                     <button className={`ruixen-submit-btn ${isMastermind ? "mastermind-btn" : ""}`}>
                         {plan.buttonText}
                     </button>
