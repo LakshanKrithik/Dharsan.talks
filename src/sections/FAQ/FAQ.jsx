@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: 'Is there lifetime access?',
-    a: "No. You'll receive 2 months of access, intentionally designed to create urgency and ensure you take action. This is more than enough time to fully learn and absorb the entire system.",
+    a: "Not exactly. You'll receive a minimum of 2 months guaranteed access, intentionally designed to create urgency and ensure you take action. This is more than enough time to fully learn and absorb the entire system. Anyways you'll be in the program as long as it is active",
   },
 ];
 

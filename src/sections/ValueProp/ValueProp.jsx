@@ -37,7 +37,7 @@ export default function ValueProp() {
             style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
           >
             <div style={{ marginBottom: '40px', width: '100%' }}>
-              <BubbleText text="Teaching my 2 years of Condensed Knowledge & Real World Practices that Helps You Reach Your Untapped Speaking Potential" />
+              <BubbleText text="Teaching My 2 Years of Condensed Knowledge & Real World Practices that Helps You Reach Your Untapped Speaking Potential" />
             </div>
             <p className="value-tagline-text">
               Learn. Practice. Improve Effortlessly
