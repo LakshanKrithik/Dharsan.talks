@@ -233,8 +233,8 @@
 @media (max-width: 768px) {
   .hero {
     align-items: center;
-    justify-content: center;
-    padding: 40px 16px 60px;
+    justify-content: flex-start;
+    padding: 80px 16px 60px;
   }
 
   .hero-content {
@@ -283,7 +283,8 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 12px 50px;
+    padding: 72px 12px 50px;
+    justify-content: flex-start;
   }
 
   .hero-title {
