@@ -120,10 +120,10 @@ export default function Curriculum() {
     // Reset all transforms
     gsap.set(pairElements, { clearProps: 'all' });
 
-    // Set initial states
-    gsap.set(pairElements[0], { opacity: 1, y: '0%', scale: 1, filter: 'blur(0px)' });
+    // Set initial states — only use GPU-friendly properties (opacity, transform)
+    gsap.set(pairElements[0], { opacity: 1, y: '0%', scale: 1, willChange: 'transform, opacity' });
     for (let i = 1; i < pairElements.length; i++) {
-      gsap.set(pairElements[i], { opacity: 0, y: '40%', scale: 0.95, filter: 'blur(5px)' });
+      gsap.set(pairElements[i], { opacity: 0, y: '40%', scale: 0.95, willChange: 'transform, opacity' });
     }
 
     const tl = gsap.timeline({
@@ -132,7 +132,7 @@ export default function Curriculum() {
         start: 'top top',
         end: `+=${(pairElements.length - 1) * 35}%`,
         pin: true,
-        scrub: 0.6,
+        scrub: 0.8,
         anticipatePin: 1,
         invalidateOnRefresh: true,
       }
@@ -143,7 +143,6 @@ export default function Curriculum() {
         opacity: 0,
         y: '-30%',
         scale: 0.95,
-        filter: 'blur(5px)',
         duration: 1,
         ease: 'none',
       }, i);
@@ -152,7 +151,6 @@ export default function Curriculum() {
         opacity: 1,
         y: '0%',
         scale: 1,
-        filter: 'blur(0px)',
         duration: 1,
         ease: 'none',
       }, i);
