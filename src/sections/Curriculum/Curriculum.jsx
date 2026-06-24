@@ -130,30 +130,31 @@ export default function Curriculum() {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: `+=${(pairElements.length - 1) * 35}%`,
-        pin: true,
-        scrub: 0.8,
-        anticipatePin: 1,
+        end: 'bottom bottom',
+        scrub: true, // Direct scrub without delay
         invalidateOnRefresh: true,
       }
     });
 
     for (let i = 0; i < pairElements.length - 1; i++) {
+      // Add a 1 unit pause before starting the next transition
+      const startTime = i * 2;
+      
       tl.to(pairElements[i], {
         opacity: 0,
         y: '-30%',
         scale: 0.95,
         duration: 1,
-        ease: 'none',
-      }, i);
+        ease: 'power2.inOut',
+      }, startTime);
 
       tl.to(pairElements[i + 1], {
         opacity: 1,
         y: '0%',
         scale: 1,
         duration: 1,
-        ease: 'none',
-      }, i);
+        ease: 'power2.inOut',
+      }, startTime);
     }
 
     tlRef.current = tl;

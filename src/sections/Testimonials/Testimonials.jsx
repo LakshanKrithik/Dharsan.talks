@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Testimonials.css';
 
@@ -44,6 +44,7 @@ const testimonials = [
 // Duplicate for seamless infinite scroll
 const doubledTestimonials = [...testimonials, ...testimonials];
 
+
 function TestimonialCard({ testimonial }) {
   return (
     <div className="testimonial-card">
@@ -63,6 +64,28 @@ export default function Testimonials() {
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
+  const requestRef = useRef();
+  const isPaused = useRef(false);
+
+  useEffect(() => {
+    const animate = () => {
+      if (marqueeRef.current && !isPaused.current && !isDragging.current) {
+        // Adjust scroll speed here
+        marqueeRef.current.scrollLeft += 1;
+        
+        // When we've scrolled exactly halfway (the length of the original array),
+        // reset to 0 for a seamless infinite loop.
+        if (marqueeRef.current.scrollLeft >= marqueeRef.current.scrollWidth / 2) {
+          marqueeRef.current.scrollLeft = 0;
+        }
+      }
+      requestRef.current = requestAnimationFrame(animate);
+    };
+
+    requestRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(requestRef.current);
+  }, []);
+
   const handleMouseDown = (e) => {
     isDragging.current = true;
     startX.current = e.pageX - marqueeRef.current.offsetLeft;
@@ -72,6 +95,13 @@ export default function Testimonials() {
 
   const handleMouseUp = () => {
     isDragging.current = false;
+    isPaused.current = false;
+    if (marqueeRef.current) marqueeRef.current.style.cursor = 'grab';
+  };
+
+  const handleMouseLeave = () => {
+    isDragging.current = false;
+    isPaused.current = false;
     if (marqueeRef.current) marqueeRef.current.style.cursor = 'grab';
   };
 
@@ -105,12 +135,15 @@ export default function Testimonials() {
         <div
           className="testimonials-marquee"
           ref={marqueeRef}
+          onMouseEnter={() => isPaused.current = true}
+          onMouseLeave={handleMouseLeave}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
           onMouseMove={handleMouseMove}
+          onTouchStart={() => isPaused.current = true}
+          onTouchEnd={() => isPaused.current = false}
         >
-          <div className="testimonials-track testimonials-track--left">
+          <div className="testimonials-track">
             {doubledTestimonials.map((t, i) => (
               <TestimonialCard key={`row1-${i}`} testimonial={t} />
             ))}

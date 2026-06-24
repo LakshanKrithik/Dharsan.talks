@@ -142,7 +142,7 @@ export default function Aurora(props) {
 
     let program;
     const isMobile = window.innerWidth <= 768;
-    const renderScale = isMobile ? 0.5 : 1;
+    const renderScale = isMobile ? 0.4 : 0.5;
 
     function resize() {
       if (!ctn) return;

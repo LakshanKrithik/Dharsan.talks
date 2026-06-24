@@ -66,32 +66,9 @@
   will-change: transform;
 }
 
-.testimonials-track--left {
-  animation: scrollLeft 60s linear infinite;
-}
 
-/* Pause animation on hover (desktop) */
-@media (min-width: 769px) {
-  .testimonials-marquee:hover .testimonials-track {
-    animation-play-state: paused;
-  }
-}
 
-/* Mobile: keep auto-scroll but allow manual swipe too */
-@media (max-width: 768px) {
-  .testimonials-track--left {
-    animation: scrollLeft 45s linear infinite;
-  }
-}
 
-@keyframes scrollLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 /* Card */
 .testimonial-card {

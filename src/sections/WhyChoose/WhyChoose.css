@@ -138,8 +138,6 @@
   min-height: 160px !important;
   border-radius: 18px !important;
   background: rgba(10, 10, 14, 0.95) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -149,55 +147,8 @@
 
 .why-glass-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(99, 145, 245, 0.12);
-  border-color: rgba(99, 145, 245, 0.3) !important;
-}
-
-/* Border shimmer on cards — hover only to save GPU */
-.why-glass-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  padding: 1px;
-  background: linear-gradient(
-    var(--why-card-angle, 0deg),
-    transparent 0%,
-    transparent 40%,
-    rgba(80, 200, 255, 0.6) 50%,
-    transparent 60%,
-    transparent 100%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  animation: whyCardShimmer 4s linear infinite paused;
-  transition: opacity 0.3s ease;
-}
-
-.why-glass-card:hover::before {
-  opacity: 1;
-  animation-play-state: running;
-}
-
-@keyframes whyCardShimmer {
-  0% { --why-card-angle: 0deg; }
-  100% { --why-card-angle: 360deg; }
-}
-
-@property --why-card-angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.why-glass-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(99, 145, 245, 0.12);
   background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(99, 145, 245, 0.3) !important;
+  border-color: rgba(99, 145, 245, 0.4) !important;
 }
 
 .why-card-inner {
@@ -339,10 +290,6 @@
     background: rgba(10, 10, 14, 0.98) !important;
   }
 
-  /* Disable shimmer animation entirely on mobile */
-  .why-glass-card::before {
-    display: none;
-  }
 
   .why-card-inner {
     padding: 20px 18px;
