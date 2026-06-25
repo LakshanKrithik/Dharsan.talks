@@ -4,7 +4,7 @@ import vid2 from '../../assets/Website Video 2-opt.mp4';
 import vid3 from '../../assets/Website Video 3-opt.mp4';
 import './Hero.css';
 
-const SKOOL_URL = 'https://rzp.io/rzp/g246ntYw';
+const SKOOL_URL = '#pricing';
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40 },

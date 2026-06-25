@@ -6,7 +6,7 @@ import './Curriculum.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SKOOL_URL = 'https://rzp.io/rzp/g246ntYw';
+const SKOOL_URL = '#pricing';
 
 const sessions = [
   {
