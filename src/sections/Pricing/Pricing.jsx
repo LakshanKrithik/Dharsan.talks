@@ -10,11 +10,11 @@ const plans = [
     id: 'standard',
     title: 'Comprehensive Communication School',
     monthlyPrice: 3499,
-    originalPrice: 7999,
+    originalPrice: 6999,
     annuallyPrice: 59990,
     desc: 'Designed for individuals at every level from beginners to early advanced speakers, to systematically master and elevate their communication skills.',
     features: [
-      'Access to over 4 hours / 19 Modules of pre-recorded classes',
+      'Access to over 16 Communication Modules',
       'Daily assignments to reinforce & apply learnings',
       'Access to a community of like-minded individuals',
     ],
