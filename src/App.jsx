@@ -7,6 +7,7 @@ import Testimonials from './sections/Testimonials/Testimonials';
 import Pricing from './sections/Pricing/Pricing';
 import FAQ from './sections/FAQ/FAQ';
 import Footer from './sections/Footer/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <FAQ />
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }
