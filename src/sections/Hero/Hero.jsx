@@ -4,7 +4,7 @@ import vid2 from '../../assets/Website Video 2-opt.mp4';
 import vid3 from '../../assets/Website Video 3-opt.mp4';
 import './Hero.css';
 
-const SKOOL_URL = '#pricing';
+const SKOOL_URL = 'https://superprofile.bio/course/communicationschool';
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40 },
@@ -65,7 +65,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div className="hero-cta-group" variants={fadeUp(0.4)}>
-          <a href={SKOOL_URL}>
+          <a href={SKOOL_URL} target="_blank" rel="noreferrer">
             <button className="hero-join-btn">
               Join Now
             </button>

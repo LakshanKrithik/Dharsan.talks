@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import RuixenPricing from '../../components/ui/RuixenPricing';
 import './Pricing.css';
 
-const SKOOL_URL = '#pricing';
+const SKOOL_URL = 'https://superprofile.bio/course/communicationschool';
 
 const plans = [
   {
@@ -19,7 +19,7 @@ const plans = [
       'Access to a community of like-minded individuals',
     ],
     buttonText: 'Join Now',
-    href: 'https://rzp.io/rzp/g246ntYw',
+    href: 'https://superprofile.bio/course/communicationschool',
   },
   {
     id: 'mastermind',

@@ -6,7 +6,7 @@ import './Curriculum.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SKOOL_URL = '#pricing';
+const SKOOL_URL = 'https://superprofile.bio/course/communicationschool';
 
 const sessions = [
   {
@@ -224,7 +224,7 @@ export default function Curriculum() {
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
           >
-            <a href={SKOOL_URL}>
+            <a href={SKOOL_URL} target="_blank" rel="noreferrer">
               <button className="curriculum-accent-btn">
                 Join Now
               </button>
@@ -278,7 +278,7 @@ export default function Curriculum() {
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
           >
-            <a href={SKOOL_URL}>
+            <a href={SKOOL_URL} target="_blank" rel="noreferrer">
               <button className="curriculum-accent-btn">
                 Join Now
               </button>

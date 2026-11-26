@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
+const JOIN_URL = 'https://superprofile.bio/course/communicationschool';
+
 const links = [
   { label: 'About',        href: '#value' },
   { label: 'Curriculum',   href: '#curriculum' },
@@ -50,7 +52,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <button className="navbar-cta-btn" onClick={() => handleScroll('#pricing')}>
+          <button className="navbar-cta-btn" onClick={() => window.open(JOIN_URL, '_blank', 'noopener,noreferrer')}>
             Join Now
           </button>
 
@@ -83,7 +85,7 @@ export default function Navbar() {
                 {l.label}
               </motion.a>
             ))}
-            <button className="navbar-cta-btn" style={{ marginTop: '16px' }} onClick={() => { handleScroll('#pricing'); setMenuOpen(false); }}>
+            <button className="navbar-cta-btn" style={{ marginTop: '16px' }} onClick={() => { window.open(JOIN_URL, '_blank', 'noopener,noreferrer'); setMenuOpen(false); }}>
               Join Now
             </button>
           </motion.div>
